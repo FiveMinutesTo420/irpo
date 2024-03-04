@@ -2,10 +2,10 @@
 @section('title',"Главная")
 
 @section('head')
-<link rel="stylesheet" href="{{asset('css/style.css')}}">
+<link rel="stylesheet" href="">
 @endsection
 
 
 @section('content')
-<h1>weter</h1>
+12
 @endsection
