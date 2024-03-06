@@ -1,0 +1,170 @@
+.ubuntu-light {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ubuntu-medium {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ubuntu-bold {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ubuntu-light-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ubuntu-regular-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ubuntu-medium-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ubuntu-bold-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}  
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+header{
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    padding: 10px 0;
+
+}
+.header_info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header_a{
+    font-size: 16px;
+    display: flex;
+    gap: 20px;
+}
+.header_a a{
+    color: black;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.header_a a:hover{
+    color: white;
+}
+.logo{
+    width: 80px;
+    height: 80px;
+}
+.bg{
+    height: 920px;
+    width: 99.1vw;
+    background-image:url("../img/main-bg.png");
+    z-index: 1;
+}
+.bg_main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 815px;
+}
+.bg_main_info{
+    width: 60%;
+    padding-bottom: 100px;
+}
+.bg_main_info h1{
+    font-weight: 500;
+    font-size: 72px;
+    margin-bottom: 20px;
+}
+.bg_main_info p{
+    font-weight: 300;
+    font-size: 30px;
+}
+.competitions_bg{
+    background-color: rgb(243, 251, 255);
+    padding-bottom: 60px;
+}
+.competition{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    z-index: 1;
+    width: 360px;
+    height: 440px;
+    background: rgb(66,58,180);
+    background: linear-gradient(90deg, rgba(66,58,180,1) 0%, rgba(29,165,253,1) 50%, rgba(30,152,194,1) 100%);
+}
+.competition_bg{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: .9;
+}
+.competitions{
+    width: 63%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.competitions h1{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 60px 0;
+}
+.actual_competitions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    row-gap: 40px;
+}
+.competition_info{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0 0 60px 30px;
+}
+.competition_info hr{
+    height: 3px;
+    background-color: white;
+    border: none;
+    width: 90%;
+    margin-top: 20px;
+}
