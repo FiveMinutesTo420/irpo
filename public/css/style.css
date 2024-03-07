@@ -54,11 +54,20 @@ body{
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
 }
-header{
-    background-color: rgba(255, 255, 255, 0.7);
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.6);
     width: 100%;
     padding: 10px 0;
-
+    opacity: 1;
+    z-index: 100;
+    box-shadow: 0px 2px 17px 1px rgba(0, 0, 0, 0.32);
+    transition: 0.2s;
+}
+.header_no_opacity{
+    background-color: rgba(255, 255, 255);
 }
 .header_info{
     display: flex;
@@ -68,18 +77,24 @@ header{
     margin-left: auto;
     margin-right: auto;
 }
-.header_a{
+.header_as{
     font-size: 16px;
     display: flex;
     gap: 20px;
 }
-.header_a a{
+.header_as a{
     color: black;
     text-decoration: none;
     transition: 0.2s;
 }
-.header_a a:hover{
-    color: white;
+.header_a:hover{
+    color: rgb(255, 255, 255);
+}
+.header_a_no_opacity{
+    color: black;
+}
+.header_a_no_opacity:hover{
+    color: rgb(141, 141, 141);
 }
 .logo{
     width: 80px;
@@ -100,16 +115,16 @@ header{
 }
 .bg_main_info{
     width: 60%;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
 }
 .bg_main_info h1{
     font-weight: 500;
-    font-size: 72px;
+    font-size: 68px;
     margin-bottom: 20px;
 }
 .bg_main_info p{
     font-weight: 300;
-    font-size: 30px;
+    font-size: 28px;
 }
 .competitions_bg{
     background-color: rgb(243, 251, 255);
@@ -150,7 +165,7 @@ header{
 .actual_competitions{
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 46px;
     row-gap: 40px;
 }
 .competition_info{
