@@ -14,6 +14,7 @@
    
             </div>
             <table class='auto_table'>
+                <!-- Форма авторизации / Путь auth.login ведет к app/http/controllers/AuthController.php -->
                 <form action="{{route('auth.login')}}" method="post">
                     @csrf
                     <tr>
