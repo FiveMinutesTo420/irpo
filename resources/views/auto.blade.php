@@ -22,6 +22,9 @@
                         <td><label for="pass">Пароль</label></td>
                         <td><input type="password" name='pass'></td>
                     </tr>
+                    <tr>
+                        <td><input type="submit" name='reg' value='Вход'></td>
+                    </tr>
                 </form>
             </table>
         </div>
