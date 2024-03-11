@@ -23,3 +23,4 @@ Route::get('/', function () {
 Route::get('/admin', AdminController::class);
 
 Route::get('/auth', AuthController::class);
+Route::post('/auth/login', [AuthController::class,'login'])->name('auth.login');
