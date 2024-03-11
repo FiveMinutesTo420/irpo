@@ -127,7 +127,8 @@ body{
     font-size: 28px;
 }
 .competitions_bg{
-    background-color: rgb(243, 251, 255);
+    background: rgb(208,228,228);
+background: linear-gradient(0deg, rgba(208,228,228,1) 0%, rgba(96,189,255,1) 100%);
     padding-bottom: 60px;
 }
 .competition{
@@ -182,4 +183,81 @@ body{
     border: none;
     width: 90%;
     margin-top: 20px;
+}
+.partns_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+.partns_main h1{
+    font-weight: 500;
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+.partns_main hr{
+    margin: 50px 0;
+    height: 2px;
+    border: none;
+    background-color: black;
+    width: 40%;
+}
+.partns{
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+}
+.partn img{
+    width: 100%;
+    height: 150px;
+}
+.orgs_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+.orgs_main h1{
+    font-weight: 500;
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+.orgs_main hr{
+    margin: 50px 0;
+    height: 2px;
+    border: none;
+    background-color: black;
+    width: 40%;
+}
+.orgs{
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+}
+.org img{
+    width: 170px;
+    height: 170px;
+}
+.leaders_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.leaders_main h1{
+    font-weight: 500;
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+.leaders{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 213px;
+    justify-content: flex-start;
+    row-gap: 100px;
+}
+.leader img{
+    width: 230px;
+    height: 250px;
 }
