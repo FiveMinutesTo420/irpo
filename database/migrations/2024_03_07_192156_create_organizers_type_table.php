@@ -8,6 +8,7 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * Таблица Типы организаторов
      */
     public function up(): void
     {
