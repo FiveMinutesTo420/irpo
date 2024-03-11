@@ -16,17 +16,17 @@
             <div class='header_info'>
                 <a href=""><img src="{{asset('img/лого.png')}}" alt="Логотип" class='logo'></a>
                 <div class='header_as'>
-                    <a href="#" class='header_a'>Список финалистов</a>
+                    <!--<a href="#" class='header_a'>Список финалистов</a>-->
                     <a href="#" class='header_a'>О форуме</a>
                     <a href="#" class='header_a'>Положение</a>
                     <a href="#" class='header_a'>Программа форума</a>
                     <a href="#" class='header_a'>Организаторы</a>
-                    <a href="#" class='header_a'>Сертификаты</a>
+                    <!--<a href="#" class='header_a'>Сертификаты</a>
                     <a href="#" class='header_a'>Координаторы</a>
-                    <a href="#" class='header_a'>Сборник</a>
+                    <a href="#" class='header_a'>Сборник</a>-->
                 </div>
                 <div class='profile'>
-                    <a href="#"><img src="{{asset('img/reg.png')}}" alt=""></a>
+
                 </div>
             </div>
         </header>
