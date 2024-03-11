@@ -20,8 +20,9 @@
             </div>-->
             <div class='competitions_bg'>
                 <div class='competitions'>
-                    <h1>АКТУАЛЬНЫЕ КОНКУРСЫ</h1>
+                    <!--<h1>АКТУАЛЬНЫЕ КОНКУРСЫ</h1>-->
                     <div class='actual_competitions'>
+                    
                         <div class='competition'>
                                 <div class='competition_bg'></div>
                                 <div class='competition_info'>
@@ -68,7 +69,7 @@
                 </div>
             </div>
             <div class='orgs_main'>
-                <h1>ОРГАНИЗАТОРЫ</h1>
+                <h1>ОРГАНИЗАЦИИ</h1>
                 <div class='orgs'>
                     <div class='org'>
                         <img src="{{asset('img/org1.png')}}" alt="Организации">
@@ -107,7 +108,12 @@
                 <h1>ОБЩЕЕ РУКОВОДСТВО</h1>
                 <div class='leaders'>
                     <div class='leader'>
-                        <img src="{{asset('img/leader1.png')}}" alt="">
+                        <div class='hex_bg_main'>
+                            <div class='hex_bg'>
+                                <div class='hex_bg_inside'>
+                                </div>
+                            </div>
+                        </div>
                         <div class='leader_info'>
                             <p>имя</p>
                             <p>имя</p>
@@ -144,5 +150,21 @@
                 </div>
             </div>
         </main>
+        <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />    
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                </filter>
+            </defs>
+        </svg>
+        <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="goo1"><feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />    
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo1" />
+                    <feComposite in="SourceGraphic" in2="goo1" operator="atop"/>
+                </filter>
+            </defs>
+        </svg>
     </section>
 @endsection
