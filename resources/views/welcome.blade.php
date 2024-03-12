@@ -111,40 +111,90 @@
                         <div class='hex_bg_main'>
                             <div class='hex_bg'>
                                 <div class='hex_bg_inside'>
+                                 <style>
+                                    .hex_bg_inside::before{
+                                        background: url("../img/leader2.png");
+                                        background-size: cover;
+                                    }
+                                 </style>
                                 </div>
                             </div>
                         </div>
                         <div class='leader_info'>
-                            <p>имя</p>
-                            <p>имя</p>
+                            <h3>Алексеев Алексей Евгеньевич</h3>
+                            <p>описание описание описание описание</p>
                         </div>
                     </div>
                     <div class='leader'>
-                        <img src="{{asset('img/leader1.png')}}" alt="">
+                        <div class='hex_bg_main'>
+                            <div class='hex_bg'>
+                                <div class='hex_bg_inside'>
+                                 <style>
+                                    .hex_bg_inside::before{
+                                        background: url("../img/leader2.png");
+                                        background-size: cover;
+                                    }
+                                 </style>
+                                </div>
+                            </div>
+                        </div>
                         <div class='leader_info'>
-                            <p>имя</p>
-                            <p>имя</p>
+                            <h3>Алексеев Алексей Евгеньевич</h3>
+                            <p>описание описание описание описание</p>
                         </div>
                     </div>
                     <div class='leader'>
-                        <img src="{{asset('img/leader1.png')}}" alt="">
+                        <div class='hex_bg_main'>
+                            <div class='hex_bg'>
+                                <div class='hex_bg_inside'>
+                                 <style>
+                                    .hex_bg_inside::before{
+                                        background: url("../img/leader2.png");
+                                        background-size: cover;
+                                    }
+                                 </style>
+                                </div>
+                            </div>
+                        </div>
                         <div class='leader_info'>
-                            <p>имя</p>
-                            <p>имя</p>
+                            <h3>Алексеев Алексей Евгеньевич</h3>
+                            <p>описание описание описание описание</p>
                         </div>
                     </div>
                     <div class='leader'>
-                        <img src="{{asset('img/leader1.png')}}" alt="">
+                        <div class='hex_bg_main'>
+                            <div class='hex_bg'>
+                                <div class='hex_bg_inside'>
+                                 <style>
+                                    .hex_bg_inside::before{
+                                        background: url("../img/leader2.png");
+                                        background-size: cover;
+                                    }
+                                 </style>
+                                </div>
+                            </div>
+                        </div>
                         <div class='leader_info'>
-                            <p>имя</p>
-                            <p>имя</p>
+                            <h3>Алексеев Алексей Евгеньевич</h3>
+                            <p>описание описание описание описание</p>
                         </div>
                     </div>
                     <div class='leader'>
-                        <img src="{{asset('img/leader1.png')}}" alt="">
+                        <div class='hex_bg_main'>
+                            <div class='hex_bg'>
+                                <div class='hex_bg_inside'>
+                                 <style>
+                                    .hex_bg_inside::before{
+                                        background: url("../img/leader2.png");
+                                        background-size: cover;
+                                    }
+                                 </style>
+                                </div>
+                            </div>
+                        </div>
                         <div class='leader_info'>
-                            <p>имя</p>
-                            <p>имя</p>
+                            <h3>Алексеев Алексей Евгеньевич</h3>
+                            <p>описание описание описание описание</p>
                         </div>
                     </div>
                 </div>
