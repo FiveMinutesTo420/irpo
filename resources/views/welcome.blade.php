@@ -20,62 +20,18 @@
                 <div class='competitions'>
                     <!--<h1>АКТУАЛЬНЫЕ КОНКУРСЫ</h1>-->
                     <div class='actual_competitions'>
+                        @foreach($events as $event)
                         <a href="" class='competition_a'>
                             <div class='competition'>
                                     <div class='competition_bg'></div>
                                     <div class='competition_info'>
-                                        <span>Научно-практическая конференция</span>
+                                        <span>{{$event->title}}</span>
                                     </div>
                             </div>
                         </a>
-                        <a href="" class='competition_a'>
-                            <div class='competition'>
-                                <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
-                                    <div class='competition_info'>
-                                        <span>Командная деловая игра марафон бизнес-идей</span>
-                                    </div>
-                            </div>
-                        </a>
-                        <a href="" class='competition_a'>
-                            <div class='competition'>
-                                <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
-                                    <div class='competition_info'>
-                                        <span>Республиканская интернет-олимпиада</span>
-                                    </div>
-                            </div>
-                        </a>
-                        <a href="" class='competition_a'>
-                            <div class='competition'>
-                                <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
-                                    <div class='competition_info'>
-                                        <span>Выставка инженерных проектов #Автобот.2023</span>
-                                    </div>
-                            </div>
-                        </a>
-                        <a href="" class='competition_a'>
-                            <div class='competition'>
-                                <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
-                                    <div class='competition_info'>
-                                        <span>Выставка инженерных проектов #Автобот.2023</span>
-                                    </div>
-                            </div>
-                        </a>
-                        <a href="" class='competition_a'>
-                            <div class='competition'>
-                                <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
-                                    <div class='competition_info'>
-                                        <span>Выставка инженерных проектов #Автобот.2023</span>
-                                    </div>
-                            </div>
-                        </a>
-                        <a href="" class='competition_a'>
-                            <div class='competition'>
-                                <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
-                                    <div class='competition_info'>
-                                        <span>Выставка инженерных проектов #Автобот.2023</span>
-                                    </div>
-                            </div>
-                        </a>
+                        @endforeach
+
+    
                     </div>
                 </div>
             <div class='orgs_main'>
