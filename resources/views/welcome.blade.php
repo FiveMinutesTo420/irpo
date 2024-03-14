@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-    <section class='bg'>
         <main class='main'>
             <!--<div class='bg_main'>
                 <div class='bg_main_info'>
@@ -18,56 +17,67 @@
                     </p>
                 </div>
             </div>-->
-            <div class='competitions_bg'>
                 <div class='competitions'>
                     <!--<h1>АКТУАЛЬНЫЕ КОНКУРСЫ</h1>-->
                     <div class='actual_competitions'>
-                    
-                        <div class='competition'>
-                                <div class='competition_bg'></div>
-                                <div class='competition_info'>
-                                    <p>Научно-практическая конференция</p>
-                                </div>
-                        </div>
-                        <div class='competition'>
-                            <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
-                                <div class='competition_info'>
-                                    <p>Командная деловая игра марафон бизнес-идей</p>
-                                </div>
-                        </div>
-                        <div class='competition'>
-                            <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
-                                <div class='competition_info'>
-                                    <p>Республиканская интернет-олимпиада</p>
-                                </div>
-                        </div>
-                        <div class='competition'>
-                            <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
-                                <div class='competition_info'>
-                                    <p>Выставка инженерных проектов #Автобот.2023</p>
-                                </div>
-                        </div>
-                        <div class='competition'>
-                            <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
-                                <div class='competition_info'>
-                                    <p>Выставка инженерных проектов #Автобот.2023</p>
-                                </div>
-                        </div>
-                        <div class='competition'>
-                            <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
-                                <div class='competition_info'>
-                                    <p>Выставка инженерных проектов #Автобот.2023</p>
-                                </div>
-                        </div>
-                        <div class='competition'>
-                            <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
-                                <div class='competition_info'>
-                                    <p>Выставка инженерных проектов #Автобот.2023</p>
-                                </div>
-                        </div>
+                        <a href="" class='competition_a'>
+                            <div class='competition'>
+                                    <div class='competition_bg'></div>
+                                    <div class='competition_info'>
+                                        <span>Научно-практическая конференция</span>
+                                    </div>
+                            </div>
+                        </a>
+                        <a href="" class='competition_a'>
+                            <div class='competition'>
+                                <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
+                                    <div class='competition_info'>
+                                        <span>Командная деловая игра марафон бизнес-идей</span>
+                                    </div>
+                            </div>
+                        </a>
+                        <a href="" class='competition_a'>
+                            <div class='competition'>
+                                <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
+                                    <div class='competition_info'>
+                                        <span>Республиканская интернет-олимпиада</span>
+                                    </div>
+                            </div>
+                        </a>
+                        <a href="" class='competition_a'>
+                            <div class='competition'>
+                                <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
+                                    <div class='competition_info'>
+                                        <span>Выставка инженерных проектов #Автобот.2023</span>
+                                    </div>
+                            </div>
+                        </a>
+                        <a href="" class='competition_a'>
+                            <div class='competition'>
+                                <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
+                                    <div class='competition_info'>
+                                        <span>Выставка инженерных проектов #Автобот.2023</span>
+                                    </div>
+                            </div>
+                        </a>
+                        <a href="" class='competition_a'>
+                            <div class='competition'>
+                                <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
+                                    <div class='competition_info'>
+                                        <span>Выставка инженерных проектов #Автобот.2023</span>
+                                    </div>
+                            </div>
+                        </a>
+                        <a href="" class='competition_a'>
+                            <div class='competition'>
+                                <div class='competition_bg' style='background-image: url("../img/"); background-size: cover;'></div>
+                                    <div class='competition_info'>
+                                        <span>Выставка инженерных проектов #Автобот.2023</span>
+                                    </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
             <div class='orgs_main'>
                 <h1>ОРГАНИЗАЦИИ</h1>
                 <div class='orgs'>
@@ -110,13 +120,7 @@
                     <div class='leader'>
                         <div class='hex_bg_main'>
                             <div class='hex_bg'>
-                                <div class='hex_bg_inside'>
-                                 <style>
-                                    .hex_bg_inside::before{
-                                        background: url("../img/leader2.png");
-                                        background-size: cover;
-                                    }
-                                 </style>
+                                <div class='hex_bg_inside' style='--image: url("../img/org2.png");'>
                                 </div>
                             </div>
                         </div>
@@ -128,13 +132,7 @@
                     <div class='leader'>
                         <div class='hex_bg_main'>
                             <div class='hex_bg'>
-                                <div class='hex_bg_inside'>
-                                 <style>
-                                    .hex_bg_inside::before{
-                                        background: url("../img/leader2.png");
-                                        background-size: cover;
-                                    }
-                                 </style>
+                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
                                 </div>
                             </div>
                         </div>
@@ -146,13 +144,7 @@
                     <div class='leader'>
                         <div class='hex_bg_main'>
                             <div class='hex_bg'>
-                                <div class='hex_bg_inside'>
-                                 <style>
-                                    .hex_bg_inside::before{
-                                        background: url("../img/leader2.png");
-                                        background-size: cover;
-                                    }
-                                 </style>
+                                <div class='hex_bg_inside' style='--image: url("../img/partn3.png");'>
                                 </div>
                             </div>
                         </div>
@@ -164,13 +156,7 @@
                     <div class='leader'>
                         <div class='hex_bg_main'>
                             <div class='hex_bg'>
-                                <div class='hex_bg_inside'>
-                                 <style>
-                                    .hex_bg_inside::before{
-                                        background: url("../img/leader2.png");
-                                        background-size: cover;
-                                    }
-                                 </style>
+                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
                                 </div>
                             </div>
                         </div>
@@ -182,13 +168,74 @@
                     <div class='leader'>
                         <div class='hex_bg_main'>
                             <div class='hex_bg'>
-                                <div class='hex_bg_inside'>
-                                 <style>
-                                    .hex_bg_inside::before{
-                                        background: url("../img/leader2.png");
-                                        background-size: cover;
-                                    }
-                                 </style>
+                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='leader_info'>
+                            <h3>Алексеев Алексей Евгеньевич</h3>
+                            <p>описание описание описание описание</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='leaders_main'>
+                <div class='leaders_h1'>
+                    <h1>КООРДИНАТОРЫ МЕРОПРИЯТИЙ</h1>
+                </div>
+                <div class='leaders'>
+                    <div class='leader'>
+                        <div class='hex_bg_main'>
+                            <div class='hex_bg'>
+                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='leader_info'>
+                            <h3>Алексеев Алексей Евгеньевич</h3>
+                            <p>описание описание описание описание</p>
+                        </div>
+                    </div>
+                    <div class='leader'>
+                        <div class='hex_bg_main'>
+                            <div class='hex_bg'>
+                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='leader_info'>
+                            <h3>Алексеев Алексей Евгеньевич</h3>
+                            <p>описание описание описание описание</p>
+                        </div>
+                    </div>
+                    <div class='leader'>
+                        <div class='hex_bg_main'>
+                            <div class='hex_bg'>
+                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='leader_info'>
+                            <h3>Алексеев Алексей Евгеньевич</h3>
+                            <p>описание описание описание описание</p>
+                        </div>
+                    </div>
+                    <div class='leader'>
+                        <div class='hex_bg_main'>
+                            <div class='hex_bg'>
+                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='leader_info'>
+                            <h3>Алексеев Алексей Евгеньевич</h3>
+                            <p>описание описание описание описание</p>
+                        </div>
+                    </div>
+                    <div class='leader'>
+                        <div class='hex_bg_main'>
+                            <div class='hex_bg'>
+                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
                                 </div>
                             </div>
                         </div>
@@ -216,5 +263,4 @@
                 </filter>
             </defs>
         </svg>
-    </section>
 @endsection
