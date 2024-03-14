@@ -189,6 +189,7 @@ body{
     align-items: flex-end;
     z-index: 1;
     width: 100%;
+    min-width: 300px;
     height: 7vw;
     padding: 0 20px 0 0;
     margin-right: 5px;
@@ -454,6 +455,9 @@ footer{
     }
     .competition_bg{
         width: 6.1vw;
+    }
+    .competition{
+        min-width: 200px;
     }
 
 }
