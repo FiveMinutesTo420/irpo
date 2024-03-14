@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', AdminController::class);
+Route::post('/admin/create/event', [AdminController::class,'createEvent'])->name('create.event');
 
 Route::get('/auth', AuthController::class);
 Route::post('/auth/login', [AuthController::class,'login'])->name('auth.login');
