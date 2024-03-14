@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 use App\Models\Event;
 /*
@@ -20,9 +20,11 @@ Route::get('/', function () {
     $events = Event::all();
     return view('welcome',compact('events'));
 });
+Route::middleware([Authenticate::class])->group(function () {
+    Route::get('/admin', AdminController::class)->name('admin');
+    Route::post('/admin/create/event', [AdminController::class,'createEvent'])->name('create.event');
+});
 
-Route::get('/admin', AdminController::class);
-Route::post('/admin/create/event', [AdminController::class,'createEvent'])->name('create.event');
 
-Route::get('/auth', AuthController::class);
+Route::get('/auth', AuthController::class)->name('auth');
 Route::post('/auth/login', [AuthController::class,'login'])->name('auth.login');

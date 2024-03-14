@@ -19,7 +19,7 @@ class AuthController extends Controller
         if(Auth::attempt($data)){
             $request->session()->regenerate();
  
-            return redirect()->back();
+            return to_route('admin');
         }
          
         return back()->withErrors([
