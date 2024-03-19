@@ -14,13 +14,16 @@ class AdminController extends Controller
     }    
     //Функция создания мероприятия
     public function createEvent(Request $request){
-        $data = $request->validate([
-            'title'=>'required',
-        ]);
+
+    
         //Создание мероприятия
         $event = new Event();
-        $event->title = $data['title'];
-        $event->slug = Str::slug($data['title'],'-');
+        $event->title = $request->input('title');
+        if($request->exists('main')){
+            $event->main = 1;
+
+        }
+        $event->slug = Str::slug($request->input('title'),'-');
         $event->img = "IMG";
     
         //Сохранение в базу и возвращение
