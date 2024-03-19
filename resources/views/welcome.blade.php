@@ -6,6 +6,9 @@
 
 @section('content')
         <main class='main'>
+            <div class='banner' style="display: ;">
+                <img src="{{asset('img/banner.png')}}" alt="">
+            </div>
             <!--<div class='bg_main'>
                 <div class='bg_main_info'>
                     <h1>ШАГ В БУДУЩУЮ <br>ПРОФЕССИЮ</h1>
@@ -135,7 +138,7 @@
                     </div>
                 </div>
             </div>
-            <div class='leaders_main'>
+            <div class='leaders_main' id="coords">
                 <div class='leaders_h1'>
                     <h1>КООРДИНАТОРЫ МЕРОПРИЯТИЙ</h1>
                 </div>

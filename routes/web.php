@@ -20,6 +20,9 @@ Route::get('/', function () {
     $events = Event::all();
     return view('welcome',compact('events'));
 });
+Route::get('/event', function () {
+    return view('event');
+});
 Route::middleware([Authenticate::class])->group(function () {
     Route::get('/admin', AdminController::class)->name('admin');
     Route::post('/admin/create/event', [AdminController::class,'createEvent'])->name('create.event');
