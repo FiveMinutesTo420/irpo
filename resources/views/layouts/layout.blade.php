@@ -14,7 +14,7 @@
 <body>
     <header class='header'>
             <div class='header_info'>
-                <a href=""><img src="{{asset('img/лого.png')}}" alt="Логотип" class='logo'></a>
+                <a href="/"><img src="{{asset('img/лого.png')}}" alt="Логотип" class='logo'></a>
                 <div class='burger_main'>
                     <div class='header_as'>
                         <a href="#" class='header_a'>О форуме</a>
@@ -25,7 +25,7 @@
                             <div class="dropdown-content">
                                 <a href="#" class='header_a'>Список финалистов</a>
                                 <a href="#" class='header_a'>Сертификаты</a>
-                                <a href="#" class='header_a'>Координаторы</a>
+                                <a href="#coords" class='header_a'>Координаторы</a>
                                 <a href="#" class='header_a'>Сборник</a>
                             </div>
                         </div>

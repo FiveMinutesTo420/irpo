@@ -1,7 +1,8 @@
 @extends('layouts.layout')
-@section('title',"Главная")
+@section('title',"Вход")
 
 @section('head')
+<link rel="stylesheet" href="{{asset('css/auto.css')}}">
 @endsection
 
 
@@ -11,30 +12,26 @@
         <div class='auto'>
             <div>
                 <h1>Вход</h1>
-   
             </div>
-            <table class='auto_table'>
                 <!-- Форма авторизации / Путь auth.login ведет к app/http/controllers/AuthController.php -->
-                <form action="{{route('auth.login')}}" method="post">
+                <form action="{{route('auth.login')}}" method="post" class='auto_form'>
                     @csrf
-                    <tr>
-                        <td><label for="login">Логин</label></td>
-                        <td><input type="text" name='login'></td>
-                    </tr>
-                    <tr>
-                        <td><label for="pass">Пароль</label></td>
-                        <td><input type="password" name='password'></td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" name='reg' value='Вход'></td>
-                    </tr>
-                    <tr>
+                    <div class='info_input'>
+                        <label for="login">Логин</label>
+                        <input type="text" name='login'>
+                    </div>
+                    <div class='info_input'>
+                        <label for="pass">Пароль</label>
+                        <input type="password" name='password'>
+                    </div>
+                    <div>
+                        <input type="submit" name='reg' value='Вход'>
+                    </div>
                         @if($errors->any())
                             {{$errors->first()}}
                         @endif
                     </tr>
                 </form>
-            </table>
         </div>
     </section>
 </main>
