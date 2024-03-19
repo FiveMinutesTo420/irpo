@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 use App\Models\Event;
 class AdminController extends Controller
 {
     public function __invoke(Request $request){
-        $events = Event::all();
+        $events = Event::orderBy('id','DESC')->get();
         return view('admin',compact('events'));
     }    
     //Функция создания мероприятия
@@ -15,10 +17,10 @@ class AdminController extends Controller
         $data = $request->validate([
             'title'=>'required',
         ]);
-        //Создание модели
-
+        //Создание мероприятия
         $event = new Event();
         $event->title = $data['title'];
+        $event->slug = Str::slug($data['title'],'-');
         $event->img = "IMG";
     
         //Сохранение в базу и возвращение

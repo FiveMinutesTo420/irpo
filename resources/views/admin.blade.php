@@ -16,8 +16,12 @@
         </form>
         <div class="events-list">
             <h4>Список мероприятий</h4>
-            123
-            {{$events->count()}}
+            
+            @foreach($events as $event)
+            <div class="event">
+                {{$event->title}}
+            </div>
+            @endforeach
         </div>
     </section>
 

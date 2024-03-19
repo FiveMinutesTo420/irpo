@@ -21,7 +21,7 @@
                     <!--<h1>АКТУАЛЬНЫЕ КОНКУРСЫ</h1>-->
                     <div class='actual_competitions'>
                         @foreach($events as $event)
-                        <a href="" class='competition_a'>
+                        <a href="{{route('event',$event->slug)}}" class='competition_a'>
                             <div class='competition'>
                                     <div class='competition_bg'></div>
                                     <div class='competition_info'>

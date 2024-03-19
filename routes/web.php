@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EventController;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 use App\Models\Event;
@@ -27,4 +28,6 @@ Route::middleware([Authenticate::class])->group(function () {
 
 
 Route::get('/auth', AuthController::class)->name('auth');
+Route::get('/event/{slug}', EventController::class)->name('event');
+
 Route::post('/auth/login', [AuthController::class,'login'])->name('auth.login');

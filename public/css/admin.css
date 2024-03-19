@@ -21,3 +21,9 @@ section{
 .events-list{
     width: 40%;
 }
+.event{
+    padding: 10px;
+    background-color: lightgray;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
