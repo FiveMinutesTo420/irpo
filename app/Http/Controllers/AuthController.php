@@ -12,16 +12,20 @@ class AuthController extends Controller
         return view('auto');
     }
     public function login(Request $request){
+        //Получаем данные и валидируем их
         $data = $request->validate([
             'login'=>'required',
             'password'=>'required'
         ]);
+
+        //Попытка авторизации 
         if(Auth::attempt($data)){
             $request->session()->regenerate();
- 
-            return to_route('admin');
+            //Если аккаунт найден 
+            return redirect()->route("admin");
         }
-         
+        
+        //Если аккаунт не найден вернуть пользователя назад с ошибкой  
         return back()->withErrors([
             'login' => 'Аккаунт не найден',
         ])->onlyInput('login');

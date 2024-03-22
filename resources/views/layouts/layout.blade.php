@@ -35,6 +35,12 @@
                             <a href="#coords" class='header_a'>Координаторы</a>
                             <a href="#" class='header_a'>Сборник</a>
                         </div>
+                        @if(auth()->check())
+                        <a href="{{route('admin')}}" class='header_a'>Админ панель</a>
+                        <a href="{{route('logout')}}" class='header_a'>Выйти</a>
+
+                        @endif
+
                     </div>
                 </div>
                 <div class='burger'>
