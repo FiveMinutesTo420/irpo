@@ -1,0 +1,72 @@
+.banner_event{
+    display: flex;
+    justify-content: center;
+    padding: 0.2vw 0 1vw;
+}
+.banner_event img{
+    width: 60%;
+    border-radius: 15px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.leaders_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    box-shadow: 0 5px 25px 5px rgba(184, 184, 184, 0.8);
+    border-radius: 10px;
+    width: 70%;
+}
+.leaders_main h1{
+    font-weight: 500;
+    font-size: 38px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.simposium{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.simposium h3{
+    font-weight: 400;
+}
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.section h4{
+    font-weight: 400;
+}
+.leaders{
+    width: 100%;
+    min-width: 775px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 60px;
+    margin-bottom: 30px;
+
+}
+.leader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+.leader img{
+    min-width: 50%;
+    height: 250px;
+}
+.leader_info{
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+}
