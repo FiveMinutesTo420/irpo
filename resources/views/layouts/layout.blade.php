@@ -32,7 +32,7 @@
                         <div class='mob_a'>
                             <a href="#" class='header_a'>Список финалистов</a>
                             <a href="#" class='header_a'>Сертификаты</a>
-                            <a href="#" class='header_a'>Координаторы</a>
+                            <a href="#coords" class='header_a'>Координаторы</a>
                             <a href="#" class='header_a'>Сборник</a>
                         </div>
                     </div>

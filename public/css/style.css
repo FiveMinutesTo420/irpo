@@ -206,7 +206,6 @@ main{
     min-width: 250px;
     height: 7vw;
     padding: 0 20px 0 0;
-    margin-right: 5px;
 }
 .competition_a{
     width: 100%;
@@ -248,7 +247,7 @@ main{
 .actual_competitions{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 40px;
+    row-gap: 20px;
 }
 .actual_competitions a{
     text-decoration: none;
@@ -258,10 +257,12 @@ main{
     flex-direction: column;
     color: rgb(0, 0, 0);
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 500;
+    color: #4e4e4e;
     margin: 0 0 0 20px;
     height: 7vw;
     justify-content: center;
+    width: 92%;
 }
 .partns_main{
     display: flex;
