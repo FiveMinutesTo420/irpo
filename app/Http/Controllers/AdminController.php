@@ -14,8 +14,6 @@ class AdminController extends Controller
     }    
     //Функция создания мероприятия
     public function createEvent(Request $request){
-
-    
         //Создание мероприятия
         $event = new Event();
         $event->title = $request->input('title');

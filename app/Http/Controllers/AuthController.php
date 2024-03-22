@@ -22,7 +22,7 @@ class AuthController extends Controller
         if(Auth::attempt($data)){
             $request->session()->regenerate();
             //Если аккаунт найден 
-            return redirect()->back();
+            return redirect()->route("admin");
         }
         
         //Если аккаунт не найден вернуть пользователя назад с ошибкой  
