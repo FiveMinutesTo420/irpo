@@ -51,6 +51,7 @@ input[type='submit']:hover{
 }
 footer{
     position: fixed;
-    top: 770px;
+    bottom: 0;
+    left: 0;
     margin: 0;
 }
