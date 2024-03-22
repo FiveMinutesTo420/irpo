@@ -26,7 +26,11 @@ Route::get('/event', function () {
 });
 Route::middleware([Authenticate::class])->group(function () {
     Route::get('/admin', AdminController::class)->name('admin');
+    Route::get('/logout', [AdminController::class,'logout'])->name('logout');
+
     Route::post('/admin/create/event', [AdminController::class,'createEvent'])->name('create.event');
+    Route::post('/admin/delete/event', [AdminController::class,'deleteEvent'])->name('delete.event');
+
 });
 
 
