@@ -14,7 +14,7 @@
             <input type="text" placeholder="Введите название" name="title" required>
             Баннер
 
-            <input type="file" name="image">
+            <input type="file" name="image" required>
             <div style="margin-bottom: 10px">
                 <input type="checkbox" name="main">
                 Основное мероприятие
@@ -37,7 +37,7 @@
         </form>
         <div class="events-list">
             <h4>Список мероприятий</h4>
-            @foreach($events as $event)
+            @forelse($events as $event)
             <div class="event">
                 <a href="{{route('event',$event->slug)}}">{{$event->title}} | {{$event->created_at}}</a>
                 <div class="event-control-buttons">
@@ -53,16 +53,23 @@
                     </form>
                 </div>
             </div>
-            @endforeach
+            @empty
+            <p>Нет мероприятий</p>
+            @endforelse
         </div>
     </section>
 </main>
 <script src="js/jquery.js"></script>
 <script>
+function delete1(id){
+    $('#expert' + id).remove();
+}
 let count = 0
+
 $('#addExpert').click(function(){
     count += 1
-    $('.experts').append('<div class="expert-fields"> <p>Эксперт №' + count +'</p><input type="text" name="name[]" placeholder="Имя"><input type="text" name="surname[]"  placeholder="Фамилия"><input type="text" name="patronymic[]"  placeholder="Отчество"><textarea name="description[]" id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>    Фотография <input type="file" name="expert-image[]"></div>')
+    $('.experts').append('<div class="expert-fields" id="expert'+count+'"> <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p><input type="text" name="name[]" required placeholder="Имя"><input type="text" name="surname[]" required  placeholder="Фамилия"><input type="text" name="patronymic[]" required  placeholder="Отчество"><textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>    Фотография <input type="file" required name="photo[]"></div>')
 })
+
 </script>
 @endsection
