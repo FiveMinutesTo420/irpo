@@ -43,3 +43,11 @@ section{
     display: flex;
     justify-content: space-between;
 }
+.expert-fields{
+    display: flex;
+    flex-direction: column;
+}
+textarea{
+    resize: vertical;
+    padding: 10px;
+}
