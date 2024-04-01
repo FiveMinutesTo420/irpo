@@ -10,7 +10,7 @@
                 
             </div>
            <section class='forum_main'>
-                <h3>Республиканская научно-практическая конференция "Шаг в будущую профессию"</h3>
+                <h3 class='forum_main_h3'>Республиканская научно-практическая конференция "Шаг в будущую профессию"</h3>
                 <div class='forums'>
                     <div class='forum'>
                         <div class='forum_bg'></div>
@@ -40,7 +40,7 @@
                         <div class='forum_bg'></div>
                         <div class='forum_info'>
                             <div class='forum_info1'>
-                            <h3>2007</h3>
+                            <h3>2011</h3>
                                 <div>
                                     <table>
                                         <tr>
@@ -52,6 +52,21 @@
                                             <td>ПОО</td>
                                         </tr>
                                         <tr>
+                                            <td class='number'>233</td>
+                                            <td>участников</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='number'>233</td>
+                                            <td>участников</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='number'>233</td>
+                                            <td>участников</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='number'>233</td>
+                                            <td>участников</td>
+                                        </tr><tr>
                                             <td class='number'>233</td>
                                             <td>участников</td>
                                         </tr>
@@ -196,6 +211,45 @@
                                             <td>ПОО</td>
                                         </tr>
                                         <tr>
+                                            <td class='number'>233</td>
+                                            <td>участников</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='forum'>
+                        <div class='forum_bg'></div>
+                        <div class='forum_info'>
+                            <div class='forum_info1'>
+                            <h3>2011</h3>
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td class='number'>11</td>
+                                            <td>секций</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='number'>38</td>
+                                            <td>ПОО</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='number'>233</td>
+                                            <td>участников</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='number'>233</td>
+                                            <td>участников</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='number'>233</td>
+                                            <td>участников</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='number'>233</td>
+                                            <td>участников</td>
+                                        </tr><tr>
                                             <td class='number'>233</td>
                                             <td>участников</td>
                                         </tr>
