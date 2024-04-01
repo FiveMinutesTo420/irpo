@@ -24,6 +24,9 @@ Route::get('/', function () {
 Route::get('/event', function () {
     return view('event');
 });
+Route::get('/forum', function () {
+    return view('forum');
+});
 Route::middleware([Authenticate::class])->group(function () {
     Route::get('/admin', AdminController::class)->name('admin');
     Route::get('/logout', [AdminController::class,'logout'])->name('logout');

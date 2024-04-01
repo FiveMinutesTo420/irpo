@@ -169,34 +169,6 @@ main{
     width: 80%;
     border-radius: 15px;
 }
-
-    /*.bg{
-    height: 920px;
-    width: 99.1vw;
-    background-image:url("../img/main-bg.png");
-    z-index: 1;
-}
-.bg_main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 815px;
-}
-.bg_main_info{
-    width: 60%;
-    padding-bottom: 60px;
-}
-.bg_main_info h1{
-    font-weight: 500;
-    font-size: 68px;
-    margin-bottom: 20px;
-}
-.bg_main_info p{
-    font-weight: 300;
-    font-size: 28px;
-}
-*/
 .competition{
     position: relative;
     display: flex;

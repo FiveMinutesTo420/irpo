@@ -17,7 +17,7 @@
                 <a href="/"><img src="{{asset('img/лого.png')}}" alt="Логотип" class='logo'></a>
                 <div class='burger_main'>
                     <div class='header_as'>
-                        <a href="#" class='header_a'>О форуме</a>
+                        <a href="/forum" class='header_a'>О форуме</a>
                         <a href="#" class='header_a'>Программа форума</a>
                         <a href="#" class='header_a'>Организаторы</a>
                         <div class='dropdown'>
