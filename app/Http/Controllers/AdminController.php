@@ -20,8 +20,14 @@ class AdminController extends Controller
         if($request->exists('main')){
             $event->main = 1;
         }
+
+        $imageName = time().'.'.$request->image->getClientOriginalExtension();
+        $request->image->move(public_path('/img/banners'), $imageName);
+
+        
+
         $event->slug = Str::slug($request->input('title'),'-');
-        $event->img = "IMG";
+        $event->img = $imageName;
     
         //Сохранение в базу и возвращение
         $event->save();

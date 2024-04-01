@@ -21,9 +21,7 @@ Route::get('/', function () {
     $events = Event::all();
     return view('welcome',compact('events'));
 });
-Route::get('/event', function () {
-    return view('event');
-});
+Route::get('/event/{slug}', EventController::class);
 Route::get('/forum', function () {
     return view('forum');
 });

@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title',"Мероприятие")
+@section('title',$event->title)
 
 @section('head')
 <link rel="stylesheet" href="{{asset('css/event.css')}}">
@@ -10,7 +10,7 @@
 <main>
     <section class='event'>
         <div class='banner_event' style="display: ;">
-            <img src="{{asset('img/event1.png')}}" alt="">
+            <img src="{{asset('img/banners/'.$event->img)}}" alt="">
         </div>
         <div class='event_input'>
             <input type="submit" value='Подать заявку'>

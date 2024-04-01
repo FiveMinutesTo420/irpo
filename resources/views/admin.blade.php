@@ -8,7 +8,7 @@
 @section('content')
 <main>
     <section>
-        <form action="{{route('create.event')}}" method="post">
+        <form action="{{route('create.event')}}" method="post" enctype="multipart/form-data">
             @csrf
             <h4>Создать мероприятие</h4>
             <input type="text" placeholder="Введите название" name="title" required>
