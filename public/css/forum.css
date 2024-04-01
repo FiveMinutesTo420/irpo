@@ -1,0 +1,127 @@
+.forum_main{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.forum_main_h3{
+    font-size: max(0.2em, 1.2vw);
+    text-align: center;
+}
+.forum{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    padding: 0 20px 0 0;
+}
+.competition_a{
+    width: 100%;
+}
+.forum_bg{
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    width: 5vw;
+    height: 100%;
+    opacity: .9;
+    color: #ace5ec;
+    filter: url('#goo');
+}
+.forum_bg::before{
+    content: "";
+    display: block;
+    background:currentColor;
+    padding-top: 115%; /* 100%/cos(30)  */
+    clip-path: polygon(0% 25%,0% 75%,50% 100%,100% 75%,100% 25%,50% 0%);
+}
+.forums{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 20px;
+}
+.forum_info{
+    display: flex;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    font-size: max(0.2em, 1vw);
+    font-weight: 500;
+    color: #4e4e4e;
+    margin: 0 0 0 20px;
+    height: auto;
+    justify-content: flex-start;
+    width: 92%;
+}
+.forum_info h3{
+    margin: 0;
+    font-size: max(0.2em, 2vw);
+    margin-bottom: 0.6vw;
+}
+.number{
+    text-align: right;
+    padding-right: 10px;
+}
+.forum_info1{
+    display: block;
+    margin-top: 0.5vw;
+    margin-left: 1vw;
+}
+td{
+    padding: 3px 0;
+}
+@media (max-width:768px) {
+    .forum_main_h3{
+        font-size: max(0.2em, 2vw);
+    }
+    .forums{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .forum_bg{
+        width: 9vw;
+    }
+    .forum_info{
+        font-size: max(0.2em, 1.6vw);
+    }
+    .forum_info h3{
+        margin: 0;
+        font-size: max(0.2em, 2.8vw);
+        margin-bottom: 0.6vw;
+    }
+    .forum_info1{
+        display: block;
+        margin-top: 1vw;
+        margin-left: 0;
+    }
+}
+@media (max-width:425px) {
+    .forum_main_h3{
+        font-size: max(0.2em, 4vw);
+    }
+    .forums{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .forum_bg{
+        width: 15vw;
+    }
+    .forum_info{
+        font-size: max(0.2em, 3.6vw);
+    }
+    .forum_info h3{
+        margin: 0;
+        font-size: max(0.2em, 6vw);
+        margin-bottom: 0.6vw;
+    }
+    .forum_info1{
+        display: block;
+        margin-top: 2vw;
+        margin-left: 0;
+    }
+}
+@media (max-width:320px) {
+
+}

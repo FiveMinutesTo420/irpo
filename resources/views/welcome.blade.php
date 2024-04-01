@@ -21,7 +21,6 @@
                 </div>
             </div>-->
                 <div class='competitions'>
-                    <!--<h1>АКТУАЛЬНЫЕ КОНКУРСЫ</h1>-->
                     <div class='actual_competitions'>
                         @foreach($events as $event)
                         <a href="{{route('event',$event->slug)}}" class='competition_a'>
@@ -33,8 +32,6 @@
                             </div>
                         </a>
                         @endforeach
-
-    
                     </div>
                 </div>
             <div class='orgs_main'>

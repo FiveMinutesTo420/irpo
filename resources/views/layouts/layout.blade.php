@@ -17,7 +17,7 @@
                 <a href="/"><img src="{{asset('img/лого.png')}}" alt="Логотип" class='logo'></a>
                 <div class='burger_main'>
                     <div class='header_as'>
-                        <a href="#" class='header_a'>О форуме</a>
+                        <a href="/forum" class='header_a'>О форуме</a>
                         <a href="#" class='header_a'>Программа форума</a>
                         <a href="#" class='header_a'>Организаторы</a>
                         <div class='dropdown'>
@@ -32,9 +32,15 @@
                         <div class='mob_a'>
                             <a href="#" class='header_a'>Список финалистов</a>
                             <a href="#" class='header_a'>Сертификаты</a>
-                            <a href="#" class='header_a'>Координаторы</a>
+                            <a href="#coords" class='header_a'>Координаторы</a>
                             <a href="#" class='header_a'>Сборник</a>
                         </div>
+                        @if(auth()->check())
+                        <a href="{{route('admin')}}" class='header_a'>Админ панель</a>
+                        <a href="{{route('logout')}}" class='header_a'>Выйти</a>
+
+                        @endif
+
                     </div>
                 </div>
                 <div class='burger'>

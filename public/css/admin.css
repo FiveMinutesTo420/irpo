@@ -27,3 +27,27 @@ section{
     margin-bottom: 5px;
     cursor: pointer;
 }
+.event-control-buttons form input{
+    border:none;
+    margin: 2px;
+
+    color:white;
+    border-radius: 2px;
+    cursor: pointer;
+    text-align: center;
+}
+.event-control-buttons{
+    margin-top: 5px;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.expert-fields{
+    display: flex;
+    flex-direction: column;
+}
+textarea{
+    resize: vertical;
+    padding: 10px;
+}

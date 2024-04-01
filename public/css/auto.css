@@ -46,11 +46,12 @@ input[type='submit']{
     border: 1px solid rgb(112, 112, 112);
 }
 input[type='submit']:hover{
-    background-color: rgb(207, 207, 207);
+    background-color: rgb(221, 220, 220);
     cursor: pointer;
 }
 footer{
     position: fixed;
-    top: 770px;
+    bottom: 0;
+    left: 0;
     margin: 0;
 }
