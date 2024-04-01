@@ -41,6 +41,9 @@ class AdminController extends Controller
         $event->delete();
         return redirect()->back();
     }
+    public function editEvent(Request $request){
+        dd("Hello");
+    }
     public function logout(Request $request){
         Auth::logout();
         $request->session()->invalidate();

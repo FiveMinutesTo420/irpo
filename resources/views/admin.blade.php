@@ -27,12 +27,21 @@
             
             @foreach($events as $event)
             <div class="event">
-                {{$event->title}}
-                <form method="post" action="{{route('delete.event')}}">
-                    @csrf
-                    <input type="hidden" name="id" value="{{$event->id}}">
-                    <input type="submit" value="Удалить">
-                </form>
+                <a href="{{route('event',$event->slug)}}">{{$event->title}} | {{$event->created_at}}</a>
+                <div class="event-control-buttons">
+                    <form method="post" action="{{route('delete.event')}}">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$event->id}}">
+                        <input type="submit" value="Удалить" style="background: red">
+                    </form>
+                    <form method="post" action="{{route('edit.event')}}">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$event->id}}">
+                        <input type="submit" value="Редактировать" style="background: green">
+                    </form>
+ 
+                </div>
+
             </div>
             @endforeach
         </div>

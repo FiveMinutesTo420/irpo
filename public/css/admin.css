@@ -27,13 +27,19 @@ section{
     margin-bottom: 5px;
     cursor: pointer;
 }
-.event form input{
-    width: 30%;
-    margin-top: 5px;
+.event-control-buttons form input{
     border:none;
-    background-color: red;
+    margin: 2px;
+
     color:white;
     border-radius: 2px;
     cursor: pointer;
     text-align: center;
+}
+.event-control-buttons{
+    margin-top: 5px;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
