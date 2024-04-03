@@ -19,16 +19,7 @@ class AdminController extends Controller
         //Создание мероприятия
         
 
-        //Докончить добавление множества экспертов. 
-        foreach($request->name as $name){
-            //Вывод всех введеных экспертов.
-            $expert = new Organizer();
-            $expert->name = $name;
-            $expert->surname = $request->surname[array_search($name,$request->name)];
-            $expert->patronymic = $request->patronymic[array_search($name,$request->name)];
-            $expert->photo = $request->photo[array_search($name,$request->name)];
-        }
-        dd(1);
+
         
         $event = new Event();
         $event->title = $request->input('title');
