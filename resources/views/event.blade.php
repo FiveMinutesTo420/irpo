@@ -26,67 +26,23 @@
                     <div class='section_h'>
                         <h4>Секция 1. «Металлообработка и транспортные средства». «Машиностроение»</h4>
                     </div>
+
                     <div class='leaders'>
+                        @foreach($event->organizers as $org)
                         <div class='leader'>
                             <div class='hex_bg_main'>
                                 <div class='hex_bg'>
-                                    <div class='hex_bg_inside' style='--image: url("../img/org2.png");'>
+                                    <div class='hex_bg_inside' style='--image: url("{{asset('img/avatars/'.$org->photo)}}");'>
                                     </div>
                                 </div>
                             </div>
                             <div class='leader_info'>
-                                <h3>Алексеев Алексей Евгеньевич</h3>
-                                <p>описание описание описание описание</p>
+                                <h3>{{$org->surname}}  {{$org->name}}  {{$org->patronymic}} </h3>
+                                <p>{{$org->description}} </p>
                             </div>
                         </div>
-                        <div class='leader'>
-                            <div class='hex_bg_main'>
-                                <div class='hex_bg'>
-                                    <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class='leader_info'>
-                                <h3>Алексеев Алексей Евгеньевич</h3>
-                                <p>описание описание описание описание</p>
-                            </div>
-                        </div>
-                        <div class='leader'>
-                            <div class='hex_bg_main'>
-                                <div class='hex_bg'>
-                                    <div class='hex_bg_inside' style='--image: url("../img/partn3.png");'>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class='leader_info'>
-                                <h3>Алексеев Алексей Евгеньевич</h3>
-                                <p>описание описание описание описание</p>
-                            </div>
-                        </div>
-                        <div class='leader'>
-                            <div class='hex_bg_main'>
-                                <div class='hex_bg'>
-                                    <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class='leader_info'>
-                                <h3>Алексеев Алексей Евгеньевич</h3>
-                                <p>описание описание описание описание</p>
-                            </div>
-                        </div>
-                        <div class='leader'>
-                            <div class='hex_bg_main'>
-                                <div class='hex_bg'>
-                                    <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class='leader_info'>
-                                <h3>Алексеев Алексей Евгеньевич</h3>
-                                <p>описание описание описание описание</p>
-                            </div>
-                        </div>
+                            
+                        @endforeach
                     </div>
                 </div>
             </div>

@@ -17,11 +17,11 @@ class AdminController extends Controller
     //Функция создания мероприятия
     public function createEvent(Request $request){
         //Создание мероприятия
-        
-
-
-        
         $event = new Event();
+
+        //Докончить добавление множества экспертов. 
+
+   
         $event->title = $request->input('title');
         if($request->exists('main')){
             $event->main = 1;
@@ -37,7 +37,22 @@ class AdminController extends Controller
     
         //Сохранение в базу и возвращение
         $event->save();
+        foreach($request->name as $name){
+            
+            $expert = new Organizer();
+            $expert->name = $name;
+            $expert->surname = $request->surname[array_search($name,$request->name)];
+            $expert->patronymic = $request->patronymic[array_search($name,$request->name)];
+            $expert->description = $request->description[array_search($name,$request->name)];
 
+            $imageName = $expert->name.'_'.$expert->surname.'_'.$expert->patronymic.'_'.time().'.'.$request->photo[array_search($name,$request->name)]->getClientOriginalExtension();
+            $request->photo[array_search($name,$request->name)]->move(public_path('/img/avatars'), $imageName);
+            $expert->photo = $imageName;
+            $expert->type_id = 1;
+            $expert->event_id = $event->id;
+            $expert->save();
+        }
+        
         return redirect()->back()->with('message','Мероприятие успешно создано');
 
     }
