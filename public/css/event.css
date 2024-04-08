@@ -111,6 +111,10 @@ main{
     align-items: center;
     font-size: max(0.8em, 0.9vw);
     width: 100%;
+    word-wrap: break-word;
+}
+.leader_info p{
+    max-width: 18vw;
 }
 
 @media (max-width:1024px) {
