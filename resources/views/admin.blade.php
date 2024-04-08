@@ -12,10 +12,12 @@
             @csrf
             <h4>Создать мероприятие</h4>
             <input type="text" placeholder="Введите название" name="title" required>
-            Баннер
+            <span>Баннер</span>
 
             <input type="file" name="image" required>
             <div style="margin-bottom: 10px">
+                <input type="checkbox" name="main">
+                <span>Основное мероприятие</span>
                 <input type="checkbox" name="main" id="main">
                 Основное мероприятие
             </div>
@@ -50,7 +52,6 @@
 
 
 
-
             <input type="submit" value="Создать">
         </form>
         <div class="events-list">
@@ -62,12 +63,12 @@
                     <form method="post" action="{{route('delete.event')}}">
                         @csrf
                         <input type="hidden" name="id" value="{{$event->id}}">
-                        <input type="submit" value="Удалить" style="background: red">
+                        <input type="submit" value="Удалить" class="event_delete">
                     </form>
                     <form method="post" action="{{route('edit.event')}}">
                         @csrf
                         <input type="hidden" name="id" value="{{$event->id}}">
-                        <input type="submit" value="Редактировать" style="background: green">
+                        <input type="submit" value="Редактировать" class="event_edit">
                     </form>
                 </div>
             </div>
