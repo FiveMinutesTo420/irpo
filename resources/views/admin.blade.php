@@ -16,10 +16,8 @@
 
             <input type="file" name="image" required>
             <div style="margin-bottom: 10px">
-                <input type="checkbox" name="main">
-                <span>Основное мероприятие</span>
                 <input type="checkbox" name="main" id="main">
-                Основное мероприятие
+                <span>Основное мероприятие</span>
             </div>
             <div id="mainContent" style="width:100%;">
                 <div id="show-symposiums" style="margin-bottom: 5px;" >
