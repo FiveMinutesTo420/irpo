@@ -65,7 +65,14 @@ class AdminController extends Controller
         return redirect()->back();
     }
     public function editEvent(Request $request){
-        dd("Hello");
+        $data = $request->validate([
+            'id' => 'required'
+        ]);
+        $event = Event::find($data['id']);
+        $event->title = $request->input('titleEdit');
+        $event->save();
+        return redirect()->back();
+
     }
     public function logout(Request $request){
         Auth::logout();

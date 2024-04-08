@@ -31,7 +31,7 @@ Route::middleware([Authenticate::class])->group(function () {
 
     Route::post('/admin/create/event', [AdminController::class,'createEvent'])->name('create.event');
     Route::post('/admin/delete/event', [AdminController::class,'deleteEvent'])->name('delete.event');
-    Route::get('/admin/edit/event', [AdminController::class,'editEvent'])->name('edit.event');
+    Route::post('/admin/edit/event', [AdminController::class,'editEvent'])->name('edit.event');
 
 
 });

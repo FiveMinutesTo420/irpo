@@ -40,6 +40,7 @@
             @forelse($events as $event)
             <div class="event">
                 <a href="{{route('event',$event->slug)}}">{{$event->title}} | {{$event->created_at}}</a>
+
                 <div class="event-control-buttons">
                     <form method="post" action="{{route('delete.event')}}">
                         @csrf
@@ -48,6 +49,7 @@
                     </form>
                     <form method="post" action="{{route('edit.event')}}">
                         @csrf
+                        <input type="text" placeholder="Введите название" name="titleEdit" required class='title_edit'>
                         <input type="hidden" name="id" value="{{$event->id}}">
                         <input type="submit" value="Редактировать" style="background: green">
                     </form>

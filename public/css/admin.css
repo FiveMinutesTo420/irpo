@@ -43,6 +43,9 @@ section{
     display: flex;
     justify-content: space-between;
 }
+.title_edit{
+    color: black !important;
+}
 .expert-fields{
     display: flex;
     flex-direction: column;
