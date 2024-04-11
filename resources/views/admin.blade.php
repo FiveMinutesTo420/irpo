@@ -24,15 +24,6 @@
             </div>
 
             <input type="button" value="Добавить эксперта" id="addExpert">
-
-
-
-
-
-
-
-
-
             <input type="submit" value="Создать">
         </form>
         <div class="events-list">

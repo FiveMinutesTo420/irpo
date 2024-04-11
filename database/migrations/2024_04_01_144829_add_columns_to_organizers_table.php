@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('surname')->after("name");
             $table->string('patronymic')->after("surname");
             $table->text('description')->after("surname");
-
+            
 
         });
     }
