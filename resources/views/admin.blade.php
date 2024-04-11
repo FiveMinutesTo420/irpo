@@ -21,12 +21,7 @@
             </div>
             <div id="mainContent" style="width:100%;">
                 <div id="show-symposiums" style="margin-bottom: 5px;" >
-                    <div style="padding:10px; border:1px solid black;">
-                        <div style="background: gray; color:white; padding:5px; border-radius:5px;">симпозиум1 абывфаодывфола</div>
-                        <div class="sections">
-                            <div style="background: aqua; width:70%; color:white; padding:5px; border-radius:5px;">Секция 1 бла бла бла</div>
-                        </div>
-                    </div>
+      
  
                 </div>
                 <div id="symposiums" style="display: flex; flex-direction:column">
@@ -74,7 +69,7 @@ function delete1(id){
 }
 let count = 0
 $('#mainContent').hide();
-let symposiums = []
+let symposiums = new Map();
 let scount = 0
 
 $('#addExpert').click(function(){
@@ -85,7 +80,12 @@ function deleteSymp(id){
     $('#sympall' + id).remove();
 }
 function addSymp(id){
-    alert($('#symp'+id).val())
+    let addedSymp = $('#symp'+id).val()
+    symposiums.set(addedSymp,[])
+    let abas = "'" + addedSymp + "'"
+
+    //let idSymp = symposiums.findIndex((element)=>element==addedSymp)
+    $('#show-symposiums').append('<div style="padding:10px; border:1px solid black;"><div style="background: gray; color:white; padding:5px; border-radius:5px;">'+addedSymp+'</div><div class="sections"><div id="added-sections'+id+'"></div><div style="background: aqua; width:70%; color:white; padding:5px; border-radius:5px;"><input type="text" id="sectionInput'+id+'" placeholder="Добавить секцию"><button onclick="addSection('+abas+','+id+')" type="button">Добавить</button></div></div></div>')
     $('#sympall' + id).remove();
 }
 $('#addSymposium').click(function(){
@@ -93,7 +93,11 @@ $('#addSymposium').click(function(){
     $('#symposiums').append('<div id ="sympall'+scount+'"><input type="text" placeholder="Название симпозиума" id="symp'+scount+'"> <button type="button" onclick="addSymp('+scount+')"> добавить </button><button type="button" onclick="deleteSymp('+scount+')"> убрать </button></div>')
 })
 
-
+function addSection(key,id){
+  
+    symposiums.get(key).push($('#sectionInput'+id).val());
+    $('#added-sections'+id).append("<div>"+$('#sectionInput'+id).val()+"</div>")
+}
 $('#main').click(function(){
     if($('#main').is(':checked')){
         $('#mainContent').show();
