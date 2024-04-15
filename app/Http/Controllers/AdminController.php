@@ -35,8 +35,8 @@ class AdminController extends Controller
         $request->image->move(public_path('/img/banners'), $imageName);
 
         
-
-        $event->slug = Str::slug($request->input('title'),'-');
+        $slugich = $request->title ."-". random_int(1,500000)."-". random_int(1,500000);
+        $event->slug = Str::slug($slugich,'-');
         $event->img = $imageName;
     
         //Сохранение в базу и возвращение
@@ -61,7 +61,7 @@ class AdminController extends Controller
             foreach($request->name as $name){
                 $expert = new Organizer();
 
-                $findSymp = Symposium::where("name","=",$request->symposiumExpert[array_search($name,$request->name)])->first();
+                $findSymp = Symposium::where("name","=",$request->symposiumExpert[array_search($name,$request->name)])->where('event_id','=',$event->id)->first();
                 if($findSymp == null){
                     $symposium = new Symposium();
                     $symposium->name = $request->symposiumExpert[array_search($name,$request->name)];

@@ -57,6 +57,10 @@
             <p>Нет мероприятий</p>
             @endforelse
         </div>
+        
+    </section>
+    <section>
+        //Добавить возможность добавления координаторов мероприятий
     </section>
 </main>
 <script src="js/jquery.js"></script>
@@ -70,7 +74,6 @@ let symposiums = new Map();
 let scount = 0
 function changeSections(obj,id){
     $("#idSectionSymps" + count).empty()
-    alert(symposiums)
     symposiums.get(obj.value).forEach((el)=>{
         $("#idSectionSymps" + count).append("<option>"+el+"</option>")
 
