@@ -130,8 +130,6 @@ class AdminController extends Controller
             $imageName = time().'.'.$request->image->getClientOriginalExtension();
             $request->image->move(public_path('/img/banners'), $imageName);
     
-            
-    
             $event->img = $imageName;
         
      
