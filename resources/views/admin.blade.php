@@ -35,39 +35,12 @@
             </div>
 
 
-            <div class="expert-fields" id="expert'+count+'">
-                 <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p>
-                 <input type="text" name="name[]" required placeholder="Имя">
-                 <input type="text" name="surname[]" required  placeholder="Фамилия">
-                 <input type="text" name="patronymic[]" required  placeholder="Отчество">
 
-                    <div id="sympsec">
-                        <select name="symposium" onchange="changeSections()" id="exsymposiums1" class="exallsymposiums">
-                        
-                        </select>
-                        <select name="section" id="exsections'+count+'">
-    
-                        </select>
-                    </div>
- 
-
-
-
-
-
-
-
-
-
-                 <textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>
-                Фотография 
-                <input type="file" required name="photo[]">
-            </div>
 
 
 
             <input type="button" value="Добавить эксперта" id="addExpert">
-            <input type="submit" value="Создать">
+            <input type="submit" value="Создать мероприятие">
         </form>
         <div class="events-list">
             <h4>Список мероприятий</h4>
@@ -80,15 +53,45 @@
                         <input type="hidden" name="id" value="{{$event->id}}">
                         <input type="submit" value="Удалить" class="event_delete">
                     </form>
-                    <form method="post" action="{{route('edit.event')}}">
-                        @csrf
-                        <input type="hidden" name="id" value="{{$event->id}}">
-                        <input type="submit" value="Редактировать" class="event_edit">
-                    </form>
+     
+                    <a class="event_edit" href="{{route('edit.event',$event->id)}}">Редактировать</a>
                 </div>
             </div>
             @empty
             <p>Нет мероприятий</p>
+            @endforelse
+        </div>
+        
+    </section>
+    <section>
+        <form action="{{route('create.coordinator')}}" method="post" enctype="multipart/form-data">
+            @csrf
+                <p>Добавить координатора</p>
+                
+                <input type="text" name="name" required placeholder="Имя">
+                <input type="text" name="surname" required  placeholder="Фамилия">
+                <input type="text" name="patronymic" required  placeholder="Отчество">
+                <textarea name="description" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>
+                Фотография                     
+                <input type="file" required name="photo">
+                <input type="submit" value="Добавить">
+        </form>
+        <div class="events-list">
+            <h4>Список координаторов</h4>
+            @forelse($coords as $coord)
+            <div class="coordinator">
+                <p>{{$coord->surname}} {{$coord->name}} {{$coord->patronymic}} | {{$coord->created_at}}</p>
+                <div class="event-control-buttons">
+                    <form method="post" action="{{route('delete.coordinator',$coord->id)}}">
+                        @csrf
+                        <input type="submit" value="Удалить" class="event_delete">
+                    </form>
+     
+                    <a class="event_edit" href="{{route('edit.coordinator',$coord->id)}}">Редактировать</a>
+                </div>
+            </div>
+            @empty
+            <p>Нет координаторов</p>
             @endforelse
         </div>
     </section>
@@ -104,19 +107,30 @@ $("#sympsec").hide();
 
 let symposiums = new Map();
 let scount = 0
+function changeSections(obj,id){
+    $("#idSectionSymps" + id).empty()
+    symposiums.get(obj.value).forEach((el)=>{
+        $("#idSectionSymps" + id).append("<option>"+el+"</option>")
 
-//В разработке
-function do1(){
-    for(var key in symposiums){
-        $('.exallsymposiums').append("<option>"+key+"</option>")
-      
-    }
+    })
 }
-do1()
-
 $('#addExpert').click(function(){
     count += 1
-    $('.experts').append('<div class="expert-fields" id="expert'+count+'"> <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p><input type="text" name="name[]" required placeholder="Имя"><input type="text" name="surname[]" required  placeholder="Фамилия"><input type="text" name="patronymic[]" required  placeholder="Отчество"><textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>    Фотография <input type="file" required name="photo[]"></div>')
+    if($('#main').is(':checked')){
+        $('.experts').append('                <div class="expert-fields" id="expert'+count+'">                      <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p>                     <input type="text" name="name[]" required placeholder="Имя">                     <input type="text" name="surname[]" required  placeholder="Фамилия">                     <input type="text" name="patronymic[]" required  placeholder="Отчество">                     <textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>                     Фотография                     <input type="file" required name="photo[]">                     Симпозиум                     <select id="idExpertSymps'+count+'" onchange="changeSections(this,'+count+')" class="expert-symps" name="symposiumExpert[]">                      </select>                     Секция                     <select id="idSectionSymps'+count+'" class="expert-sections" name="sectionExpert[]">                      </select>                     </div>')
+
+        symposiums.forEach(function(value,key){
+            $('#idExpertSymps' + count).append("<option>"+key+"</option>")
+            
+        });
+      
+        symposiums.get(symposiums.keys().next().value).forEach((el)=>{
+            $("#idSectionSymps" + count).append("<option>"+el+"</option>")
+        })
+    }else{
+        $('.experts').append('<div class="expert-fields" id="expert'+count+'"> <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p><input type="text" name="name[]" required placeholder="Имя"><input type="text" name="surname[]" required  placeholder="Фамилия"><input type="text" name="patronymic[]" required  placeholder="Отчество"><textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>    Фотография <input type="file" required name="photo[]"></div>')
+
+    }
 })
 function deleteSymp(id){
     $('#sympall' + id).remove();
@@ -128,7 +142,7 @@ function addSymp(id){
     //let idSymp = symposiums.findIndex((element)=>element==addedSymp)
     $('#show-symposiums').append('<div style="padding:10px; border:1px solid black;"><div style="background: gray; color:white; padding:5px; border-radius:5px;">'+addedSymp+'</div><div class="sections"><div id="added-sections'+id+'"></div><div style="background: aqua; width:70%; color:white; padding:5px; border-radius:5px;"><input type="text" id="sectionInput'+id+'" placeholder="Добавить секцию"><button onclick="addSection('+abas+','+id+')" type="button">Добавить</button></div></div></div>')
     $('#sympall' + id).remove();
-    do1()
+    $('.expert-symps').append("<option>"+addedSymp+"</option>")
 }
 $('#addSymposium').click(function(){
     scount += 1
@@ -138,8 +152,7 @@ $('#addSymposium').click(function(){
 function addSection(key,id){
     symposiums.get(key).push($('#sectionInput'+id).val());
     $('#added-sections'+id).append("<div>"+$('#sectionInput'+id).val()+"</div>")
-    $("#sectionInput"+id).val("")
-
+    $('#sectionInput'+id).val("")
 }
 $('#main').click(function(){
     if($('#main').is(':checked')){

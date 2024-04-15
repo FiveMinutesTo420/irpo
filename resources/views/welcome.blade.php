@@ -140,66 +140,20 @@
                     <h1>КООРДИНАТОРЫ МЕРОПРИЯТИЙ</h1>
                 </div>
                 <div class='leaders'>
+                    @foreach($coords as $coord)
                     <div class='leader'>
                         <div class='hex_bg_main'>
                             <div class='hex_bg'>
-                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
+                                <div class='hex_bg_inside' style='--image: url({{asset('img/avatars/'.$coord->photo)}})'>
                                 </div>
                             </div>
                         </div>
                         <div class='leader_info'>
-                            <h3>Алексеев Алексей Евгеньевич</h3>
-                            <p>описание описание описание описание</p>
+                            <h3>{{$coord->surname}} {{$coord->name}} {{$coord->patronymic}}</h3>
+                            <p>{{$coord->description}}</p>
                         </div>
                     </div>
-                    <div class='leader'>
-                        <div class='hex_bg_main'>
-                            <div class='hex_bg'>
-                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='leader_info'>
-                            <h3>Алексеев Алексей Евгеньевич</h3>
-                            <p>описание описание описание описание</p>
-                        </div>
-                    </div>
-                    <div class='leader'>
-                        <div class='hex_bg_main'>
-                            <div class='hex_bg'>
-                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='leader_info'>
-                            <h3>Алексеев Алексей Евгеньевич</h3>
-                            <p>описание описание описание описание</p>
-                        </div>
-                    </div>
-                    <div class='leader'>
-                        <div class='hex_bg_main'>
-                            <div class='hex_bg'>
-                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='leader_info'>
-                            <h3>Алексеев Алексей Евгеньевич</h3>
-                            <p>описание описание описание описание</p>
-                        </div>
-                    </div>
-                    <div class='leader'>
-                        <div class='hex_bg_main'>
-                            <div class='hex_bg'>
-                                <div class='hex_bg_inside' style='--image: url("../img/leader2.png");'>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='leader_info'>
-                            <h3>Алексеев Алексей Евгеньевич</h3>
-                            <p>описание описание описание описание</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </main>
