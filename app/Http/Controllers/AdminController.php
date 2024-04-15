@@ -122,8 +122,26 @@ class AdminController extends Controller
         $event->delete();
         return redirect()->back();
     }
-    public function editEvent(Request $request){
-        dd("Hello");
+    public function editEvent(Request $request, Event $event){
+        return view('edit',compact('event'));
+    }
+    public function storeEditEvent(Request $request, Event $event){
+        if($request->image != null){
+            $imageName = time().'.'.$request->image->getClientOriginalExtension();
+            $request->image->move(public_path('/img/banners'), $imageName);
+    
+            
+    
+            $event->img = $imageName;
+        
+     
+        }
+        $event->title = $request->title;
+        $event->slug = Str::slug($request->input('title'),'-');
+
+        $event->save();
+        return redirect()->route('event',$event->slug);
+        
     }
     public function logout(Request $request){
         Auth::logout();

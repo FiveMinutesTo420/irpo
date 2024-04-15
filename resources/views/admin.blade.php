@@ -49,11 +49,8 @@
                         <input type="hidden" name="id" value="{{$event->id}}">
                         <input type="submit" value="Удалить" class="event_delete">
                     </form>
-                    <form method="post" action="{{route('edit.event')}}">
-                        @csrf
-                        <input type="hidden" name="id" value="{{$event->id}}">
-                        <input type="submit" value="Редактировать" class="event_edit">
-                    </form>
+     
+                    <a class="event_edit" href="{{route('edit.event',$event->id)}}">Редактировать</a>
                 </div>
             </div>
             @empty
