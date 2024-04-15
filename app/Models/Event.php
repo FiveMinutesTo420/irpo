@@ -12,4 +12,7 @@ class Event extends Model
     public function organizers(){
         return $this->hasMany(Organizer::class);
     }
+    public function symposiums(){
+        return $this->hasMany(Symposium::class);
+    }
 }

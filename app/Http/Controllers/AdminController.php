@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Event;
 use App\Models\Organizer;
+use App\Models\Section;
+use App\Models\Symposium;
 
 class AdminController extends Controller
 {
@@ -25,6 +27,8 @@ class AdminController extends Controller
         $event->title = $request->input('title');
         if($request->exists('main')){
             $event->main = 1;
+        }else{
+            $event->main = 0;
         }
 
         $imageName = time().'.'.$request->image->getClientOriginalExtension();
@@ -37,21 +41,75 @@ class AdminController extends Controller
     
         //Сохранение в базу и возвращение
         $event->save();
-        foreach($request->name as $name){
+        if($event->main == 0){
+            foreach($request->name as $name){
             
-            $expert = new Organizer();
-            $expert->name = $name;
-            $expert->surname = $request->surname[array_search($name,$request->name)];
-            $expert->patronymic = $request->patronymic[array_search($name,$request->name)];
-            $expert->description = $request->description[array_search($name,$request->name)];
+                $expert = new Organizer();
+                $expert->name = $name;
+                $expert->surname = $request->surname[array_search($name,$request->name)];
+                $expert->patronymic = $request->patronymic[array_search($name,$request->name)];
+                $expert->description = $request->description[array_search($name,$request->name)];
+    
+                $imageName = $expert->name.'_'.$expert->surname.'_'.$expert->patronymic.'_'.time().'.'.$request->photo[array_search($name,$request->name)]->getClientOriginalExtension();
+                $request->photo[array_search($name,$request->name)]->move(public_path('/img/avatars'), $imageName);
+                $expert->photo = $imageName;
+                $expert->type_id = 1;
+                $expert->event_id = $event->id;
+                $expert->save();
+            }
+        }else{
+            foreach($request->name as $name){
+                $expert = new Organizer();
 
-            $imageName = $expert->name.'_'.$expert->surname.'_'.$expert->patronymic.'_'.time().'.'.$request->photo[array_search($name,$request->name)]->getClientOriginalExtension();
-            $request->photo[array_search($name,$request->name)]->move(public_path('/img/avatars'), $imageName);
-            $expert->photo = $imageName;
-            $expert->type_id = 1;
-            $expert->event_id = $event->id;
-            $expert->save();
+                $findSymp = Symposium::where("name","=",$request->symposiumExpert[array_search($name,$request->name)])->first();
+                if($findSymp == null){
+                    $symposium = new Symposium();
+                    $symposium->name = $request->symposiumExpert[array_search($name,$request->name)];
+                    $symposium->event_id = $event->id;
+                    $symposium->save();
+
+                    $section = new Section();
+                    $section->name = $request->sectionExpert[array_search($name,$request->name)];
+                    $section->symposium_id = $symposium->id;
+                    $section->save();
+                    
+                    $expert->symposium_id = $symposium->id;
+                    $expert->section_id = $section->id;
+
+                }else{
+                    $expert->symposium_id = $findSymp->id;
+                    $findSection = Section::where("symposium_id",'=',$findSymp->id)->where("name","=",$request->sectionExpert[array_search($name,$request->name)])->first();
+                    if($findSection == null){
+                        $section = new Section();
+                        $section->name = $request->sectionExpert[array_search($name,$request->name)];
+                        $section->symposium_id = $findSymp->id;
+                        $section->save();
+                        $expert->section_id = $section->id;
+
+                    }else{
+                    $expert->section_id = $findSection->id;
+
+                    }
+
+                }
+
+            
+                $expert->name = $name;
+                $expert->surname = $request->surname[array_search($name,$request->name)];
+                $expert->patronymic = $request->patronymic[array_search($name,$request->name)];
+                $expert->description = $request->description[array_search($name,$request->name)];
+    
+                $imageName = $expert->name.'_'.$expert->surname.'_'.$expert->patronymic.'_'.time().'.'.$request->photo[array_search($name,$request->name)]->getClientOriginalExtension();
+                $request->photo[array_search($name,$request->name)]->move(public_path('/img/avatars'), $imageName);
+                $expert->photo = $imageName;
+                $expert->type_id = 1;
+                $expert->event_id = $event->id;
+                $expert->save();
+                
+
+            }
         }
+
         
         return redirect()->back()->with('message','Мероприятие успешно создано');
 

@@ -18,17 +18,21 @@
         <div class='leaders_main'>
             <h1>Эксперты</h1>
             <hr>
+            @if($event->main == 1)
+            @foreach($event->symposiums as $symp)
+            
             <div class='simposium'>
                 <div class='simposium_h'>
-                    <h3>Симпозиум 1. Инженерные науки в техносфере настоящего и будущего</h3>
+                    <h3>{{$symp->name}}</h3>
                 </div>
+                @foreach($symp->sections as $sec)
                 <div class='section'>
                     <div class='section_h'>
-                        <h4>Секция 1. «Металлообработка и транспортные средства». «Машиностроение»</h4>
+                        <h4>{{$sec->name}}</h4>
                     </div>
 
                     <div class='leaders'>
-                        @foreach($event->organizers as $org)
+                        @foreach($sec->organizers as $org)
                         <div class='leader'>
                             <div class='hex_bg_main'>
                                 <div class='hex_bg'>
@@ -45,7 +49,31 @@
                         @endforeach
                     </div>
                 </div>
+                @endforeach
             </div>
+            @endforeach
+    
+
+                @else
+                <div class='leaders'>
+                    @foreach($event->organizers as $org)
+                    <div class='leader'>
+                        <div class='hex_bg_main'>
+                            <div class='hex_bg'>
+                                <div class='hex_bg_inside' style='--image: url("{{asset('img/avatars/'.$org->photo)}}");'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='leader_info'>
+                            <h3>{{$org->surname}}  {{$org->name}}  {{$org->patronymic}} </h3>
+                            <p>{{$org->description}} </p>
+                        </div>
+                    </div>
+                        
+                    @endforeach
+                </div>
+                @endif
+            
         </div>
     </section>
     <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">

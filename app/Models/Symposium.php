@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Symposium extends Model
 {
     use HasFactory;
+    public function sections(){
+        return $this->hasMany(Section::class);
+    }
 }

@@ -71,10 +71,28 @@ let count = 0
 $('#mainContent').hide();
 let symposiums = new Map();
 let scount = 0
+function changeSections(obj,id){
+    $("#idSectionSymps" + count).empty()
+    alert(symposiums)
+    symposiums.get(obj.value).forEach((el)=>{
+        $("#idSectionSymps" + count).append("<option>"+el+"</option>")
 
+    })
+}
 $('#addExpert').click(function(){
     count += 1
-    $('.experts').append('<div class="expert-fields" id="expert'+count+'"> <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p><input type="text" name="name[]" required placeholder="Имя"><input type="text" name="surname[]" required  placeholder="Фамилия"><input type="text" name="patronymic[]" required  placeholder="Отчество"><textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>    Фотография <input type="file" required name="photo[]"></div>')
+    if($('#main').is(':checked')){
+        $('.experts').append('                <div class="expert-fields" id="expert'+count+'">                      <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p>                     <input type="text" name="name[]" required placeholder="Имя">                     <input type="text" name="surname[]" required  placeholder="Фамилия">                     <input type="text" name="patronymic[]" required  placeholder="Отчество">                     <textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>                     Фотография                     <input type="file" required name="photo[]">                     Симпозиум                     <select id="idExpertSymps'+count+'" onchange="changeSections(this,'+count+')" class="expert-symps" name="symposiumExpert[]">                      </select>                     Секция                     <select id="idSectionSymps'+count+'" class="expert-sections" name="sectionExpert[]">                      </select>                     </div>')
+
+        symposiums.forEach(function(value,key){
+            $('#idExpertSymps' + count).append("<option>"+key+"</option>")
+            
+        });
+
+    }else{
+        $('.experts').append('<div class="expert-fields" id="expert'+count+'"> <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p><input type="text" name="name[]" required placeholder="Имя"><input type="text" name="surname[]" required  placeholder="Фамилия"><input type="text" name="patronymic[]" required  placeholder="Отчество"><textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>    Фотография <input type="file" required name="photo[]"></div>')
+
+    }
 })
 function deleteSymp(id){
     $('#sympall' + id).remove();
@@ -87,6 +105,7 @@ function addSymp(id){
     //let idSymp = symposiums.findIndex((element)=>element==addedSymp)
     $('#show-symposiums').append('<div style="padding:10px; border:1px solid black;"><div style="background: gray; color:white; padding:5px; border-radius:5px;">'+addedSymp+'</div><div class="sections"><div id="added-sections'+id+'"></div><div style="background: aqua; width:70%; color:white; padding:5px; border-radius:5px;"><input type="text" id="sectionInput'+id+'" placeholder="Добавить секцию"><button onclick="addSection('+abas+','+id+')" type="button">Добавить</button></div></div></div>')
     $('#sympall' + id).remove();
+    $('.expert-symps').append("<option>"+addedSymp+"</option>")
 }
 $('#addSymposium').click(function(){
     scount += 1
@@ -97,6 +116,7 @@ function addSection(key,id){
   
     symposiums.get(key).push($('#sectionInput'+id).val());
     $('#added-sections'+id).append("<div>"+$('#sectionInput'+id).val()+"</div>")
+    $('#sectionInput'+id).val("")
 }
 $('#main').click(function(){
     if($('#main').is(':checked')){
