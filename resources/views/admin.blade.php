@@ -126,7 +126,6 @@ $('#addExpert').click(function(){
 
         symposiums.forEach(function(value,key){
             $('#idExpertSymps' + count).append("<option>"+key+"</option>")
-            
         });
       
         symposiums.get(symposiums.keys().next().value).forEach((el)=>{

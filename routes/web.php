@@ -20,6 +20,7 @@ use App\Models\Coordinator;
 */
 
 Route::get('/', function () {
+    
     $events = Event::all();
     $coords = Coordinator::orderBy('id','DESC')->get();
 
