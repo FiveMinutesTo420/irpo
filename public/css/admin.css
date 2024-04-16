@@ -38,6 +38,7 @@ input{
     padding: 10px;
     margin-bottom: 3px;
 }
+
 .event_add_div input{
     display: flex;
     justify-content: center;
@@ -58,14 +59,6 @@ input{
 }
 .event_edit{
     background-color: rgb(15, 165, 15);
-    border:none;
-    margin: 2px;
-    color:white;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    font-size: max(0.7em, 0.7vw);
-    font-weight: 700;
 }
 section{
     display: flex;
@@ -133,10 +126,5 @@ textarea{
     }
     .events-list{
         width: 80%;
-    }
-}
-@media (max-width:425px) {
-    .admin{
-        box-shadow: none;
     }
 }

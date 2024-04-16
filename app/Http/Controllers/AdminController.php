@@ -184,8 +184,8 @@ class AdminController extends Controller
      
         }
         $event->title = $request->title;
-        $event->slug = Str::slug($request->input('title'),'-');
-
+        $slugich = $request->title ."-". random_int(1,500000)."-". random_int(1,500000);
+        $event->slug = Str::slug($slugich,'-');
         $event->save();
         return redirect()->route('event',$event->slug);
         

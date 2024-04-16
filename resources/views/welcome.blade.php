@@ -140,7 +140,7 @@
                     <h1>КООРДИНАТОРЫ МЕРОПРИЯТИЙ</h1>
                 </div>
                 <div class='leaders'>
-                    @foreach($coords as $coord)
+                    @forelse($coords as $coord)
                     <div class='leader'>
                         <div class='hex_bg_main'>
                             <div class='hex_bg'>
@@ -148,12 +148,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class='leader_info'>
+                        <div class='leader_info' style="text-align:center">
                             <h3>{{$coord->surname}} {{$coord->name}} {{$coord->patronymic}}</h3>
-                            <p>{{$coord->description}}</p>
+                            <pre>{{$coord->description}}</prе>
                         </div>
                     </div>
-                    @endforeach
+
+                    @empty
+                    <p>Нет координаторов</p>
+                    @endforelse
                 </div>
             </div>
         </main>
