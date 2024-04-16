@@ -44,7 +44,7 @@
             <input type="submit" value="Создать мероприятие" class="create_event_button">
         </form>
         <div class="events-list">
-            <h4>Список мероприятий</h4>
+            <h4>Список мероприятий | <a target="_blank" href="http://127.0.0.1/openserver/phpmyadmin/index.php?route=/&route=%2F&db=irposakha&table=organizers">Редактировать экспертов, симпозиумы, секции</a></h4>
             @forelse($events as $event)
             <div class="event">
                 <a href="{{route('event',$event->slug)}}">{{$event->title}} | {{$event->created_at}}</a>
@@ -118,7 +118,7 @@ function changeSections(obj,id){
 $('#addExpert').click(function(){
     count += 1
     if($('#main').is(':checked')){
-        $('.experts').append('                <div class="expert-fields" id="expert'+count+'">                      <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p>                     <input type="text" name="name[]" required placeholder="Имя">                     <input type="text" name="surname[]" required  placeholder="Фамилия">                     <input type="text" name="patronymic[]" required  placeholder="Отчество">                     <textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>                     Фотография                     <input type="file" required name="photo[]">                     Симпозиум                     <select id="idExpertSymps'+count+'" onchange="changeSections(this,'+count+')" class="expert-symps" name="symposiumExpert[]">                      </select>                     Секция                     <select id="idSectionSymps'+count+'" class="expert-sections" name="sectionExpert[]">                      </select>                     </div>')
+        $('.experts').append('                <div class="expert-fields" id="expert'+count+'">                      <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p>                                          <input type="text" name="surname[]" required  placeholder="Фамилия"><input type="text" name="name[]" required placeholder="Имя">                     <input type="text" name="patronymic[]" required  placeholder="Отчество">                     <textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>                     Фотография                     <input type="file" required name="photo[]">                     Симпозиум                     <select id="idExpertSymps'+count+'" onchange="changeSections(this,'+count+')" class="expert-symps" name="symposiumExpert[]">                      </select>                     Секция                     <select id="idSectionSymps'+count+'" class="expert-sections" name="sectionExpert[]">                      </select>                     </div>')
 
         symposiums.forEach(function(value,key){
             $('#idExpertSymps' + count).append("<option>"+key+"</option>")
@@ -129,7 +129,7 @@ $('#addExpert').click(function(){
             $("#idSectionSymps" + count).append("<option>"+el+"</option>")
         })
     }else{
-        $('.experts').append('<div class="expert-fields" id="expert'+count+'"> <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p><input type="text" name="name[]" required placeholder="Имя"><input type="text" name="surname[]" required  placeholder="Фамилия"><input type="text" name="patronymic[]" required  placeholder="Отчество"><textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>    Фотография <input type="file" required name="photo[]"></div>')
+        $('.experts').append('<div class="expert-fields" id="expert'+count+'"> <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p><input type="text" name="surname[]" required  placeholder="Фамилия"><input type="text" name="name[]" required placeholder="Имя"><input type="text" name="patronymic[]" required  placeholder="Отчество"><textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>    Фотография <input type="file" required name="photo[]"></div>')
 
     }
 })
@@ -153,7 +153,15 @@ $('#addSymposium').click(function(){
 function addSection(key,id){
     symposiums.get(key).push($('#sectionInput'+id).val());
     $('#added-sections'+id).append("<div>"+$('#sectionInput'+id).val()+"</div>")
+    var els = $('.expert-symps')
+    Array.prototype.forEach.call(els,function(el){
+        if(el.value == key){
+            var idEl = el.id.replace(/^\D+/g, '');
+            $('#idSectionSymps'+idEl).append("<option>"+$('#sectionInput'+id).val()+"</option>")
+        }
+    })
     $('#sectionInput'+id).val("")
+
 }
 $('#main').click(function(){
     if($('#main').is(':checked')){
