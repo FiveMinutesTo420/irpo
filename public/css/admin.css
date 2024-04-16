@@ -10,11 +10,10 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 15px;
     padding: 0 20px 25px 20px;
     border-radius: 10px;
-    box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.75);
 }
 .admin hr{
     width: 96%;
@@ -64,6 +63,7 @@ section{
     display: flex;
     justify-content: space-between;
     width: 90%;
+    padding: 10px;
 }
 .events-list{
     width: 40%;
@@ -120,6 +120,7 @@ textarea{
     section{
         flex-direction: column;
         align-items: center;
+        padding: 10px;
     }
     form{
         width: 80%;

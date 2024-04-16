@@ -99,6 +99,7 @@
             @endforelse
         </div>
     </section>
+    </section>
 </main>
 <script src="js/jquery.js"></script>
 <script>
@@ -121,7 +122,7 @@ function changeSections(obj,id){
 $('#addExpert').click(function(){
     count += 1
     if($('#main').is(':checked')){
-        $('.experts').append('                <div class="expert-fields" id="expert'+count+'">                      <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p>                                          <input type="text" name="surname[]" required  placeholder="Фамилия"><input type="text" name="name[]" required placeholder="Имя">                     <input type="text" name="patronymic[]" required  placeholder="Отчество">                     <textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>                     Фотография                     <input type="file" required name="photo[]">                     Симпозиум                     <select id="idExpertSymps'+count+'" onchange="changeSections(this,'+count+')" class="expert-symps" name="symposiumExpert[]">                      </select>                     Секция                     <select id="idSectionSymps'+count+'" class="expert-sections" name="sectionExpert[]">                      </select>                     </div>')
+        $('.experts').append('              <hr>  <div class="expert-fields" id="expert'+count+'">                      <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p>                                          <input type="text" name="surname[]" required  placeholder="Фамилия"><input type="text" name="name[]" required placeholder="Имя">                     <input type="text" name="patronymic[]" required  placeholder="Отчество">                     <textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>                     Фотография                     <input type="file" required name="photo[]">                     Симпозиум                     <select id="idExpertSymps'+count+'" onchange="changeSections(this,'+count+')" class="expert-symps" name="symposiumExpert[]">                      </select>                     Секция                     <select id="idSectionSymps'+count+'" class="expert-sections" name="sectionExpert[]">                      </select>                     </div>')
 
         symposiums.forEach(function(value,key){
             $('#idExpertSymps' + count).append("<option>"+key+"</option>")
@@ -132,7 +133,7 @@ $('#addExpert').click(function(){
             $("#idSectionSymps" + count).append("<option>"+el+"</option>")
         })
     }else{
-        $('.experts').append('<div class="expert-fields" id="expert'+count+'"> <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p><input type="text" name="surname[]" required  placeholder="Фамилия"><input type="text" name="name[]" required placeholder="Имя"><input type="text" name="patronymic[]" required  placeholder="Отчество"><textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>    Фотография <input type="file" required name="photo[]"></div>')
+        $('.experts').append('<hr><div class="expert-fields" id="expert'+count+'"> <p>Эксперт №' + count +' <button onclick="delete1('+count+')">Удалить</button></p><input type="text" name="surname[]" required  placeholder="Фамилия"><input type="text" name="name[]" required placeholder="Имя"><input type="text" name="patronymic[]" required  placeholder="Отчество"><textarea name="description[]" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>    Фотография <input type="file" required name="photo[]"></div>')
 
     }
 })
