@@ -7,32 +7,33 @@
 
 @section('content')
 <main>
-    <section>
-        <form action="{{route('create.event')}}" method="post" enctype="multipart/form-data">
-            @csrf
-            <h4>Создать мероприятие</h4>
-            <input type="text" placeholder="Введите название" name="title" required>
-            <span>Баннер</span>
+    <section class='admin'>
+        <section>
+            <form action="{{route('create.event')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <h4>Создать мероприятие</h4>
+                <input type="text" placeholder="Введите название" name="title" required>
+                <span>Баннер</span>
 
-            <input type="file" name="image" required>
-            <div style="margin-bottom: 10px">
-                <input type="checkbox" name="main" id="main">
-                <span>Основное мероприятие</span>
-            </div>
-            <div id="mainContent" style="width:100%;">
-                <div id="show-symposiums" style="margin-bottom: 5px;" >
-      
- 
+                <input type="file" name="image" required>
+                <div style="margin-bottom: 10px">
+                    <input type="checkbox" name="main" id="main">
+                    <span>Основное мероприятие</span>
                 </div>
-                <div id="symposiums" style="display: flex; flex-direction:column">
+                <div id="mainContent" style="width:100%;">
+                    <div id="show-symposiums" style="margin-bottom: 5px;" >
+        
+    
+                    </div>
+                    <div id="symposiums" style="display: flex; flex-direction:column">
+
+                    </div>
+                    <input type="button" value="Добавить симпозиум" id="addSymposium">
 
                 </div>
-                <input type="button" value="Добавить симпозиум" id="addSymposium">
+                <div class="experts">
 
-            </div>
-            <div class="experts">
-
-            </div>
+                </div>
 
 
 
@@ -40,8 +41,7 @@
 
 
             <input type="button" value="Добавить эксперта" id="addExpert">
-            <br>
-            <input type="submit" value="Создать мероприятие" class="create_event_button">
+            <input type="submit" value="Создать мероприятие">
         </form>
         <div class="events-list">
             <h4>Список мероприятий | <a target="_blank" href="http://127.0.0.1/openserver/phpmyadmin/index.php?route=/&route=%2F&db=irposakha&table=organizers">Редактировать экспертов, симпозиумы, секции</a></h4>
@@ -54,8 +54,9 @@
                         <input type="hidden" name="id" value="{{$event->id}}">
                         <input type="submit" value="Удалить" class="event_delete">
                     </form>
-     
-                    <a class="event_edit" href="{{route('edit.event',$event->id)}}">Редактировать</a>
+                    <form action="{{route('edit.event',$event->id)}}">
+                        <input type="submit" value="Редактировать" class="event_edit">  
+                    </form>
                 </div>
             </div>
             @empty
@@ -68,9 +69,10 @@
     <section>
         <form action="{{route('create.coordinator')}}" method="post" enctype="multipart/form-data">
             @csrf
-                <p>Добавить координатора</p>
-                <input type="text" name="surname" required  placeholder="Фамилия">
+                <h4>Добавить координатора</h4>
+                
                 <input type="text" name="name" required placeholder="Имя">
+                <input type="text" name="surname" required  placeholder="Фамилия">
                 <input type="text" name="patronymic" required  placeholder="Отчество">
                 <textarea name="description" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>
                 Фотография                     
@@ -81,14 +83,15 @@
             <h4>Список координаторов</h4>
             @forelse($coords as $coord)
             <div class="coordinator">
-                <p>{{$coord->surname}} {{$coord->name}} {{$coord->patronymic}} | {{$coord->created_at}}</p>
+                <span>{{$coord->surname}} {{$coord->name}} {{$coord->patronymic}} | {{$coord->created_at}}</span>
                 <div class="event-control-buttons">
                     <form method="post" action="{{route('delete.coordinator',$coord->id)}}">
                         @csrf
                         <input type="submit" value="Удалить" class="event_delete">
                     </form>
-     
-                    <a class="event_edit" href="{{route('edit.coordinator',$coord->id)}}">Редактировать</a>
+                    <form action="{{route('edit.coordinator',$coord->id)}}">
+                        <input type="submit" value="Редактировать" class="event_edit">  
+                    </form>
                 </div>
             </div>
             @empty
