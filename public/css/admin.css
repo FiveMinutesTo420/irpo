@@ -112,3 +112,14 @@ textarea{
 select{
     padding: 10px;
 }
+.create_event_button{
+    background-color: green;
+    border:none;
+    color:white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.create_event_button:hover{
+    background-color: red;
+}

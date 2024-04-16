@@ -40,7 +40,8 @@
 
 
             <input type="button" value="Добавить эксперта" id="addExpert">
-            <input type="submit" value="Создать мероприятие">
+            <br>
+            <input type="submit" value="Создать мероприятие" class="create_event_button">
         </form>
         <div class="events-list">
             <h4>Список мероприятий</h4>
