@@ -188,7 +188,7 @@ class AdminController extends Controller
         $coord->description = $request->description;
 
         $coord->save();
-        return back();
+        return redirect()->route('admin');
     }
     public function deleteEvent(Request $request){
         $data = $request->validate([
