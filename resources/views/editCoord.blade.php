@@ -7,7 +7,7 @@
 
 @section('content')
 <main>
-    <section>
+    <section class="admin">
         <form action="{{route('edit.coordinator.store',$coord->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             <p>Редактировать координатора</p>
