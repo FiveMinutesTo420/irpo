@@ -144,7 +144,7 @@ function addSymp(id){
     symposiums.set(addedSymp,[])
     let abas = "'" + addedSymp + "'"
     //let idSymp = symposiums.findIndex((element)=>element==addedSymp)
-    $('#show-symposiums').append('<div style="padding:10px; border:1px solid black;"><div style="background: gray; color:white; padding:5px; border-radius:5px;">'+addedSymp+'</div><div class="sections"><div id="added-sections'+id+'"></div><div style="background: aqua; width:70%; color:white; padding:5px; border-radius:5px;"><input type="text" id="sectionInput'+id+'" placeholder="Добавить секцию"><button onclick="addSection('+abas+','+id+')" type="button">Добавить</button></div></div></div>')
+    $('#show-symposiums').append('<div class="section_add""><div class="simposium_name">'+addedSymp+'</div><div class="sections"><div style="margin-left: 15px;" id="added-sections'+id+'"></div><div class="section_div" style=""><input type="text" id="sectionInput'+id+'" placeholder="Добавить секцию"><button onclick="addSection('+abas+','+id+')" type="button">Добавить</button></div></div></div>')
     $('#sympall' + id).remove();
     $('.expert-symps').append("<option>"+addedSymp+"</option>")
 }
