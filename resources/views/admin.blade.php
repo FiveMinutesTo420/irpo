@@ -7,93 +7,99 @@
 
 @section('content')
 <main>
-    <section>
-        <form action="{{route('create.event')}}" method="post" enctype="multipart/form-data">
-            @csrf
-            <h4>Создать мероприятие</h4>
-            <input type="text" placeholder="Введите название" name="title" required>
-            <span>Баннер</span>
+    <section class='admin'>
+        <section>
+            <form action="{{route('create.event')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <h4>Создать мероприятие</h4>
+                <input type="text" placeholder="Введите название" name="title" required>
+                <span>Баннер</span>
 
-            <input type="file" name="image" required>
-            <div style="margin-bottom: 10px">
-                <input type="checkbox" name="main" id="main">
-                <span>Основное мероприятие</span>
-            </div>
-            <div id="mainContent" style="width:100%;">
-                <div id="show-symposiums" style="margin-bottom: 5px;" >
-      
- 
+                <input type="file" name="image" required>
+                <div style="margin-bottom: 10px">
+                    <input type="checkbox" name="main" id="main">
+                    <span>Основное мероприятие</span>
                 </div>
-                <div id="symposiums" style="display: flex; flex-direction:column">
-
-                </div>
-                <input type="button" value="Добавить симпозиум" id="addSymposium">
-
-            </div>
-            <div class="experts">
-
-            </div>
-
-
-
-
-
-
-            <input type="button" value="Добавить эксперта" id="addExpert">
-            <input type="submit" value="Создать мероприятие">
-        </form>
-        <div class="events-list">
-            <h4>Список мероприятий</h4>
-            @forelse($events as $event)
-            <div class="event">
-                <a href="{{route('event',$event->slug)}}">{{$event->title}} | {{$event->created_at}}</a>
-                <div class="event-control-buttons">
-                    <form method="post" action="{{route('delete.event')}}">
-                        @csrf
-                        <input type="hidden" name="id" value="{{$event->id}}">
-                        <input type="submit" value="Удалить" class="event_delete">
-                    </form>
-     
-                    <a class="event_edit" href="{{route('edit.event',$event->id)}}">Редактировать</a>
-                </div>
-            </div>
-            @empty
-            <p>Нет мероприятий</p>
-            @endforelse
-        </div>
+                <div id="mainContent" style="width:100%;">
+                    <div id="show-symposiums" style="margin-bottom: 5px;" >
         
-    </section>
-    <section>
-        <form action="{{route('create.coordinator')}}" method="post" enctype="multipart/form-data">
-            @csrf
-                <p>Добавить координатора</p>
-                
-                <input type="text" name="name" required placeholder="Имя">
-                <input type="text" name="surname" required  placeholder="Фамилия">
-                <input type="text" name="patronymic" required  placeholder="Отчество">
-                <textarea name="description" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>
-                Фотография                     
-                <input type="file" required name="photo">
-                <input type="submit" value="Добавить">
-        </form>
-        <div class="events-list">
-            <h4>Список координаторов</h4>
-            @forelse($coords as $coord)
-            <div class="coordinator">
-                <p>{{$coord->surname}} {{$coord->name}} {{$coord->patronymic}} | {{$coord->created_at}}</p>
-                <div class="event-control-buttons">
-                    <form method="post" action="{{route('delete.coordinator',$coord->id)}}">
-                        @csrf
-                        <input type="submit" value="Удалить" class="event_delete">
-                    </form>
-     
-                    <a class="event_edit" href="{{route('edit.coordinator',$coord->id)}}">Редактировать</a>
+    
+                    </div>
+                    <div id="symposiums" style="display: flex; flex-direction:column">
+
+                    </div>
+                    <input type="button" value="Добавить симпозиум" id="addSymposium">
+
                 </div>
+                <div class="experts">
+
+                </div>
+
+
+
+
+
+
+                <input type="button" value="Добавить эксперта" id="addExpert">
+                <input type="submit" value="Создать мероприятие" style='margin-bottom: 15px;'>
+            </form>
+            <div class="events-list">
+                <h4>Список мероприятий</h4>
+                @forelse($events as $event)
+                <div class="event">
+                    <a href="{{route('event',$event->slug)}}">{{$event->title}} | {{$event->created_at}}</a>
+                    <div class="event-control-buttons">
+                        <form method="post" action="{{route('delete.event')}}">
+                            @csrf
+                            <input type="hidden" name="id" value="{{$event->id}}">
+                            <input type="submit" value="Удалить" class="event_delete">
+                        </form>
+                        <form action="{{route('edit.event',$event->id)}}">
+                            <input type="submit" class='event_edit' value='Редактировать'>
+                        </form>
+
+                    </div>
+                </div>
+                @empty
+                <p>Нет мероприятий</p>
+                @endforelse
             </div>
-            @empty
-            <p>Нет координаторов</p>
-            @endforelse
-        </div>
+            
+        </section>
+        <hr>
+        <section>
+            <form action="{{route('create.coordinator')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                    <h4>Добавить координатора</h4>
+                    
+                    <input type="text" name="name" required placeholder="Имя">
+                    <input type="text" name="surname" required  placeholder="Фамилия">
+                    <input type="text" name="patronymic" required  placeholder="Отчество">
+                    <textarea name="description" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>
+                    <h4>Фотография</h4>                    
+                    <input type="file" required name="photo">
+                    <input type="submit" value="Добавить">
+            </form>
+            <div class="events-list">
+                <h4>Список координаторов</h4>
+                @forelse($coords as $coord)
+                <div class="coordinator">
+                    <span>{{$coord->surname}} {{$coord->name}} {{$coord->patronymic}} | {{$coord->created_at}}</span>
+                    <div class="event-control-buttons">
+                        <form method="post" action="{{route('delete.coordinator',$coord->id)}}">
+                            @csrf
+                            <input type="submit" value="Удалить" class="event_delete">
+                        </form>
+                        <form action="{{route('edit.coordinator',$coord->id)}}">
+                            <input type="submit" class='event_edit' value='Редактировать'>
+                        </form>
+                    </div>
+                </div>
+                @empty
+                <p>Нет координаторов</p>
+                @endforelse
+            </div>
+        </section>
     </section>
 </main>
 <script src="js/jquery.js"></script>
