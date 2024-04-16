@@ -63,13 +63,13 @@
         </div>
         
     </section>
+    <hr>
     <section>
         <form action="{{route('create.coordinator')}}" method="post" enctype="multipart/form-data">
             @csrf
                 <p>Добавить координатора</p>
-                
-                <input type="text" name="name" required placeholder="Имя">
                 <input type="text" name="surname" required  placeholder="Фамилия">
+                <input type="text" name="name" required placeholder="Имя">
                 <input type="text" name="patronymic" required  placeholder="Отчество">
                 <textarea name="description" required id="" cols="30" rows="6"  placeholder="Добавьте описание"></textarea>
                 Фотография                     

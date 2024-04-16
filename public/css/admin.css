@@ -18,6 +18,7 @@ input{
     padding: 10px;
     margin-bottom: 3px;
 }
+
 .event_add_div input{
     display: flex;
     justify-content: center;
@@ -36,9 +37,7 @@ input{
 .event_delete{
     background-color: rgb(209, 0, 0);
 }
-.event_edit{
-    background-color: rgb(15, 165, 15);
-}
+
 section{
     display: flex;
     justify-content: space-between;
@@ -94,4 +93,22 @@ textarea{
     .events-list{
         width: 80%;
     }
+}
+.event_edit{
+    padding: 10px;
+    margin-bottom: 3px;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 30%;
+    text-align: center;
+    color:white;
+    background-color: rgb(15, 165, 15);
+}
+.coordinator{
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+select{
+    padding: 10px;
 }

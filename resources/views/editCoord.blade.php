@@ -11,9 +11,8 @@
         <form action="{{route('edit.coordinator.store',$coord->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             <p>Редактировать координатора</p>
-                
-            <input type="text" name="name" value="{{$coord->name}}" required placeholder="Имя">
             <input type="text" name="surname" value="{{$coord->surname}}" required  placeholder="Фамилия">
+            <input type="text" name="name" value="{{$coord->name}}" required placeholder="Имя">
             <input type="text" name="patronymic" value="{{$coord->patronymic}}" required  placeholder="Отчество">
             <textarea name="description" required id="" cols="30" rows="6"  placeholder="Добавьте описание">{{$coord->description}}</textarea>
             Фотография                     
