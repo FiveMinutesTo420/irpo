@@ -7,7 +7,7 @@
 
 @section('content')
 <main>
-    <section>
+    <section class="admin">
         <form action="{{route('edit.event.store',$event->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             <h4>Редактировать мероприятие</h4>
