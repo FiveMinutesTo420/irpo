@@ -99,6 +99,36 @@
             @endforelse
         </div>
     </section>
+    <hr>
+
+    <section>
+
+        <div class="all-expert-list">
+        <h4>Список экспертов</h4>
+        @forelse($allExperts as $coord)
+        <div class="coordinator">
+            <p><b>{{$coord->event->title}}</b></p>
+            
+            <span>{{$coord->surname}} {{$coord->name}} {{$coord->patronymic}} | {{$coord->created_at}}</span>
+            <div class="event-control-buttons">
+                <form method="post" action="{{route('delete.organizer',$coord->id)}}">
+                    @csrf
+                    <input type="submit" value="Удалить" class="event_delete">
+                </form>
+                <form action="{{route('edit.organizer',$coord->id)}}">
+                    <input type="submit" value="Редактировать" class="event_edit">  
+                </form>
+            </div>
+        </div>
+        @empty
+        Нет экспертов
+        @endforelse
+        </div>
+
+        <div class="events-list">
+
+        </div>
+    </section>
     </section>
 </main>
 <script src="js/jquery.js"></script>
