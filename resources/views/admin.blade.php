@@ -44,7 +44,7 @@
             <input type="submit" value="Создать мероприятие">
         </form>
         <div class="events-list">
-            <h4>Список мероприятий | <a target="_blank" href="https://vh422.timeweb.ru/pma/?">Редактировать экспертов, симпозиумы, секции</a></h4>
+            <h4>Список мероприятий</a></h4>
             @forelse($events as $event)
             <div class="event">
                 <a href="{{route('event',$event->slug)}}">{{$event->title}} | {{$event->created_at}}</a>
