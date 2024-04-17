@@ -16,7 +16,8 @@ class AdminController extends Controller
     public function __invoke(Request $request){
         $events = Event::orderBy('id','DESC')->get();
         $coords = Coordinator::orderBy('id','DESC')->get();
-        return view('admin',compact('events','coords'));
+        $allExperts = Organizer::orderBy('id','DESC')->get();
+        return view('admin',compact('events','coords','allExperts'));
     }    
     //Функция создания мероприятия
     public function createEvent(Request $request){
@@ -162,6 +163,32 @@ class AdminController extends Controller
 
         $coord->save();
         return back();
+    }
+    function deleteOrganizer(Request $request,Organizer $coord ){
+        $coord->delete();
+        return back();
+
+    }
+    function editOrganizer(Request $request,Organizer $coord ){
+        return view('editOrganizer',compact('coord'));
+
+    }
+    function storeEditOrganizer(Request $request, Organizer $coord){
+        if($request->photo != null){
+            $imageName = time().'.'.$request->photo->getClientOriginalExtension();
+            $request->photo->move(public_path('/img/avatars'), $imageName);
+    
+            $coord->photo = $imageName;
+        
+     
+        }
+        $coord->name = $request->name;
+        $coord->surname = $request->surname;
+        $coord->patronymic = $request->patronymic;
+        $coord->description = $request->description;
+
+        $coord->save();
+        return redirect()->route('admin');
     }
     public function deleteEvent(Request $request){
         $data = $request->validate([

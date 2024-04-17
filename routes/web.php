@@ -47,6 +47,9 @@ Route::middleware([Authenticate::class])->group(function () {
     Route::get('/admin/edit/{event}', [AdminController::class,'editEvent'])->name('edit.event');
     Route::post('/admin/edit/store/{event}', [AdminController::class,'storeEditEvent'])->name('edit.event.store');
 
+    Route::post('/admin/delete/organizer/{coord}', [AdminController::class,'deleteOrganizer'])->name('delete.organizer');
+    Route::get('/admin/edit/organizer/{coord}', [AdminController::class,'editOrganizer'])->name('edit.organizer');
+    Route::post('/admin/edit/organizer/{coord}', [AdminController::class,'storeEditOrganizer'])->name('edit.organizer.store');
 
 });
 
